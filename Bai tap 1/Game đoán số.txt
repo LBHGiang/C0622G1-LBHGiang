@@ -1,0 +1,8 @@
+BEGIN
+     Máy ch?n ng?u nhiên A
+     INPUT B
+     IF (A==B)
+         OUTPUT "Ðoán dúng"
+     ELSE 
+         OUTPUT "Ðoán sai"
+END
