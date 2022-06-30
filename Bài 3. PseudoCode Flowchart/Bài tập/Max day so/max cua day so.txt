@@ -1,0 +1,14 @@
+BEGIN
+    INPUT n
+    INPUT A1,A2,...,An
+    max = 0
+    i=1
+    WHILE i<n DO 
+              IF (Ai > max) DO max=Ai
+              END IF
+              i=i+1
+    END WHILE
+    OUTPUT max
+END 
+    
+    

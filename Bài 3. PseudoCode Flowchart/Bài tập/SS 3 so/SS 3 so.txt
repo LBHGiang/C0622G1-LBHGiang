@@ -1,2 +1,13 @@
 BEGIN 
- INPUT A=
+ INPUT A,B,C
+
+ IF (A>B)   max=A
+    ELSE    max=B
+ END IF
+
+ IF (max>C) max=max
+    ELSE    max=C
+ END IF
+
+ OUTPUT max
+END
