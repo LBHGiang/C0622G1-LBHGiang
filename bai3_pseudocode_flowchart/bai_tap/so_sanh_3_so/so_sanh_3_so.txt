@@ -5,8 +5,8 @@ BEGIN
     ELSE    max=B
  END IF
 
- IF (max>C) max=max
-    ELSE    max=C
+ IF (max<C) 
+     max=C
  END IF
 
  OUTPUT max
