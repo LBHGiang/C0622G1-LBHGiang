@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>
+    #dv1 {
+        /*line-height:350px;*/
+        background-color:yellow;
+        height: 350px;
+        width:45%;
+        float:left;
+        padding:10px;
+    }
+    #dv2 {
+        /*line-height:350px;*/
+        background-color:greenyellow;
+        height: 350px;
+        width:45%;
+        float:left;
+        padding:10px;
+    }
+</style>
+    <meta charset="UTF-8">
+    <title>Bai tap 2 </title>
+</head><h1>Bài tập 2 gộp cả 2 form lại</h1>
+<body>
+<div id="dv1">
+    <form action="" method="get">
+        <fieldset>
+            <legend>
+            </legend>
+            <h2 style="color: white; background: orangered; text-align: center">SỞ THÍCH CỦA BẠN</h2>
+            <table>
+                <tr>
+                    <td style="text-align: right; color: blue;width: 30%;">Họ và tên:</td>
+                    <td style="text-align: left;"><input type="text" name=";yourname"/></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; color: blue">Email:</td>
+                    <td style="text-align: left;"><input type="text" name="email"/></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;vertical-align: top; color: blue">Sở thích:</td>
+                    <td><table style="width:300px; color: red">
+                        <tr>
+                            <td style="width: 100px;"><input  type="checkbox" name="hobby" value="the thao"/> Thể thao</td>
+                            <td style="width: 100px;"><input  type="checkbox" name="hobby" value="luot web"/> Lướt web</td>
+                            <td style="width: 100px;"><input  type="checkbox" name="hobby" value="du lich"/> Du lịch</td>
+                        </tr>
+                        <tr>
+                            <td><input  type="checkbox" name="hobby" value="am nhac"/> Âm nhạc</td>
+                            <td><input  type="checkbox" name="hobby" value="choi game"/> Chơi game</td>
+                            <td><input  type="checkbox" name="hobby" value="doc sach"/> Đọc sách</td>
+                        </tr>
+                        <tr><td><input  type="checkbox" name="hobby" value="dien anh"/> Điện ảnh</td>
+                        </tr>
+                    </table>
+                <tr>
+                    <td style="text-align: right"><input type="submit" value="Gửi thông tin"/></td>
+                    <td style="text-align:left"><input type="reset" value="Nhập lại"/></td>
+                </tr>
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+<div id="dv2">
+    <form style=" padding-left: 15%; width: 50%;" action="Form%20dang%20ky%20nguoi%20dung.html" method="get">
+        <fieldset style="background: blanchedalmond"><legend></legend>
+            <h2 style="background: aquamarine">ĐĂNG KÝ HỌC VIÊN</h2>
+            <table>
+                <tr>
+                    <td style="width: 35%;">Họ và tên</td>
+                    <td><input type="text" name="name" size="20"></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh</td>
+                    <td><select name="dd">
+                        <option aria-disabled="false">dd</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                        /
+                        <select name="mm">
+                            <option aria-disabled="false">mm</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        /
+                        <select name="yy">
+                            <option aria-disabled="false">yyyy</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                    <td style="color: black"><input type="radio" name="gioitinh" value="Nam">Nam
+                        <input type="radio" name="gioitinh" value="Nữ">Nữ
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">Địa chỉ</td>
+                    <td><textarea name="dia chi"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Lớp</td>
+                    <td><select name="lop">
+                        <option value="">-Chọn lớp-</option>
+                        <option value="C0622G1">C0622G1</option>
+                        <option value="C0622G2">C0622G2</option>
+                    </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="email"   /></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td><input type="text" name="phone"   /></td>
+                </tr>
+                <tr><td></td>
+                    <td>
+                        <input type="submit" value="Đăng ký"/>
+                        <input type="reset" value="Nhập lại">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
