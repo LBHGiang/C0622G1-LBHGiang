@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td>Lớp</td>
-                <td><select name="lop">
+                <td><select name="lop" id="lop"/>
                     <option value="">-Chọn lớp-</option>
                     <option value="C0622G1">C0622G1</option>
                     <option value="C0622G2">C0622G2</option>
@@ -82,7 +82,7 @@
                 <td><input type="text" name="email"   /></td>
             </tr>
             <tr>
-                <td>Điện thoại</td>
+                <td id="dt">Điện thoại</td>
                 <td><input type="text" name="phone"   /></td>
             </tr>
             <tr><td></td>
@@ -97,4 +97,17 @@
 </div>
 
 </body>
+<script>
+    var doimau=document.getElementById("dt");
+    doimau.addEventListener("mouseover", doimaudo);
+    doimau.addEventListener("mouseout", doimauden);
+    function doimaudo() {doimau.style.color="red";
+
+    }
+    function doimauden() {doimau.style.color="black";
+
+    }
+
+
+</script>
 </html>

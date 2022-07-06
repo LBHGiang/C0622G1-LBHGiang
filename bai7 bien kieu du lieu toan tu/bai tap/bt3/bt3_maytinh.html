@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h2>Máy_tính</h2>
+
+<input type="number" id="number1"/>
+<input type="number" id="number2"/>
+<br><br>
+<button onclick="cong()">Cộng</button>
+<button onclick="tru()">Trừ</button>
+<button onclick="nhan()">Nhân</button>
+<button onclick="chia()">Chia</button>
+<p id="ket_qua">Result</p>
+</body>
+<script>
+    function cong() {
+        let numbera = parseFloat(document.getElementById("number1").value);
+        let numberb = parseFloat(document.getElementById("number2").value);
+        let ket_qua = numbera + numberb;
+        document.getElementById("ket_qua").innerHTML = ket_qua.toFixed(1);
+
+    }
+
+    function tru() {
+        let number = parseFloat(document.getElementById("number1").value);
+        let number1 = parseFloat(document.getElementById("number2").value);
+        let ket_qua = number - number1;
+        document.getElementById("ket_qua").innerHTML = ket_qua.toFixed(1);
+
+    }
+
+    function nhan() {
+        let numbera = parseFloat(document.getElementById("number1").value);
+        let numberb = parseFloat(document.getElementById("number2").value);
+        let ket_qua = numbera * numberb;
+        document.getElementById("ket_qua").innerHTML = ket_qua.toFixed(1);
+
+    }
+
+    function chia() {
+        let numbera = parseFloat(document.getElementById("number1").value);
+        let numberb = parseFloat(document.getElementById("number2").value);
+        let ket_qua = numbera / numberb;
+        document.getElementById("ket_qua").innerHTML = ket_qua.toFixed(1);
+
+    }
+
+</script>
+</html>

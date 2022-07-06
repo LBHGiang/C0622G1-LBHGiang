@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+    <colgroup>
+        <col width="80" span="1">
+        <col width="110" span="1">
+        <col width="100" span="2">
+        <col width="30" span="2">
+    </colgroup>
+    <tr>
+        <th><label for="amount">Amount</label></th>
+        <th>From Currency</th>
+        <th>Kết quả:</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" size="15" id="amount"></td>
+        <td>
+            <select id="from">
+                <option value="1">VND</option>
+                <option value="23000">USD</option>
+                <option value="170">Yên</option>
+                <option value="3500">Nhân dân Tệ</option>
+                <option value="15000">AUS $</option>
+            </select>
+        </td>
+        <td id="result" style="text-align: right;color: red"></td>
+        <td>
+            <select id="to">
+                <option value="1">VND</option>
+                <option value="23000">USD</option>
+                <option value="170">Yên</option>
+                <option value="3500">Nhân dân Tệ</option>
+                <option value="15000">AUS $</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="convert()">Convert</button>
+        </td>
+    </tr>
+</table>
+
+<br>
+
+</body>
+<script>
+    function convert() {
+        let AAmount = document.getElementById("amount").value;
+        let DDauvao = document.getElementById("from").value;
+        let DDaura = document.getElementById("to").value;
+        let KKetqua = (AAmount * DDauvao / DDaura);
+        document.getElementById("result").innerHTML = KKetqua.toFixed(3);
+
+    }
+</script>
+</html>
+
