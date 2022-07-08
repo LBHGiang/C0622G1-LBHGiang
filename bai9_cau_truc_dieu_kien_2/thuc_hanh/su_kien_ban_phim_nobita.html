@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="dasansang()">
+<img id="nobita" src="https://james.codegym.vn/pluginfile.php/64922/mod_assign/intro/1.png" alt="anh_nobita"
+     style="margin-left: 200px; margin-top:100px">
+</body>
+<script>
+    let quave=200;
+    let lenxuong=100;
+    function phai() {
+        quave = quave + 20;
+        document.getElementById("nobita").style.marginLeft = quave + 'px';
+        document.getElementById("nobita").style.marginTop = lenxuong + 'px';
+    }
+    function trai() {
+        quave = quave - 20;
+        document.getElementById("nobita").style.marginLeft = quave + 'px';
+        document.getElementById("nobita").style.marginTop = lenxuong + 'px';
+    }
+    function tren() {
+        lenxuong = lenxuong - 20;
+        document.getElementById("nobita").style.marginLeft = quave + 'px';
+        document.getElementById("nobita").style.marginTop = lenxuong + 'px';
+    }
+    function duoi() {
+        lenxuong = lenxuong + 20;
+        document.getElementById("nobita").style.marginLeft = quave + 'px';
+        document.getElementById("nobita").style.marginTop = lenxuong + 'px';
+    }
+
+
+   function dichuyenanh(evt) {
+       switch (evt.keyCode) {
+            case    37: trai(); break;
+            case    39: phai(); break;
+            case    38: tren(); break;
+            case    40: duoi(); break;
+       }
+
+   }
+    function dasansang() {
+        window.addEventListener('keydown', dichuyenanh);
+    }
+</script>
+</html>

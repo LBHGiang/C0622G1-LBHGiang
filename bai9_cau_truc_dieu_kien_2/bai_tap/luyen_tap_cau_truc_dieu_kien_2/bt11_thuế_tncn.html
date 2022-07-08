@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let thuNhap = prompt('Thu nhập của bạn là (trĐ)');
+    alert('Từ 0 Đến 10 triệu đồng - 5%\n' +
+        'Từ 10 triệu đồng đến 20 triệu đồng - 10% \n' +
+        'Trên 20 triệu đồng - 20%');
+    let thue = 0;
+    if (thuNhap <= 10) {
+        thue = thuNhap / 100 * 5;
+    } else if (thuNhap <= 20) {
+        thue = 10 / 100 * 5 + (thuNhap - 10) / 100 * 10;
+    } else {
+        thue = 10 / 100 * 5 + 10 / 100 * 10 + (thuNhap - 20) / 100 * 20;
+    }
+    alert('Tiền thuế phải đóng là ' + thue.toFixed(3) + 'trVNđ');
+</script>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="4"><input type="text" id="view"></th>
+    </tr>
+    <tr>
+        <td>
+            <button value="1" onclick="press(this.value)">1</button>
+        </td>
+        <td>
+            <button value="2" onclick="press(this.value)">2</button>
+        </td>
+        <td>
+            <button value="3" onclick="press(this.value)">3</button>
+        </td>
+        <td>
+            <button id="phep+" value="+" onclick="press(this.value)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button value="4" onclick="press(this.value)">4</button>
+        </td>
+        <td>
+            <button value="5" onclick="press(this.value)">5</button>
+        </td>
+        <td>
+            <button value="6" onclick="press(this.value)">6</button>
+        </td>
+        <td>
+            <button id="phep-" value="-" onclick="press(this.value)">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button value="7" onclick="press(this.value)">7</button>
+        </td>
+        <td>
+            <button value="8" onclick="press(this.value)">8</button>
+        </td>
+        <td>
+            <button value="9" onclick="press(this.value)">9</button>
+        </td>
+        <td>
+            <button id="phep*" value="*" onclick="press(this.value)">*</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="reSet()">AC</button>
+        </td>
+        <td>
+            <button id="so_0" value="0" onclick="press(this.value)">0</button>
+        </td>
+        <td>
+            <button onclick="reSult()">=</button>
+        </td>
+        <td>
+            <button id="phep/" value="/" onclick="press(this.value)">/</button>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    let view = document.getElementById("view");
+
+    function press(value) {
+        if (value == '/') {
+            document.getElementById("so_0").disabled = true;
+        } else {
+            document.getElementById("so_0").disabled = false;
+        }
+        if (value == '+' || value == '-' || value == '*' || value == '/') {
+            tat_Chucnangg();
+
+        } else {
+            bat_Chucnang();
+        }
+        view.value += value; //view.value = view.value + value;
+
+    }
+
+    function reSult() {
+        let result = eval(view.value);
+        view.value = result;
+    }
+
+    function reSet() {
+        view.value = "";
+    }
+
+    function tat_Chucnangg() {
+        document.getElementById("phep/").disabled = true;
+        document.getElementById("phep+").disabled = true;
+        document.getElementById("phep-").disabled = true;
+        document.getElementById("phep*").disabled = true;
+
+    }
+
+    function bat_Chucnang() {
+        document.getElementById("phep/").disabled = false;
+        document.getElementById("phep+").disabled = false;
+        document.getElementById("phep-").disabled = false;
+        document.getElementById("phep*").disabled = false;
+    }
+</script>
+</html>

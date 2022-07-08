@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi số cân nặng </title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Chiều cao (m)</th>
+        <th>Cân nặng (kg)</th>
+        <th></th>
+        <th></th>
+        <th>Xếp loại</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="chieu_cao"/></td>
+        <td><input type="text" id="can_nang"></td>
+        <td>
+            <button onclick="tinhtoan()">BMI=</button>
+        </td>
+        <td id="chisobmi"></td>
+        <td id="ket_qua"></td>
+    </tr>
+</table>
+<br>
+<img src="https://james.codegym.vn/pluginfile.php/64923/mod_assign/intro/1.png" alt="anh_bmi"
+style="width: 600px; height: 150px">
+</body>
+<script>
+    function tinhtoan() {
+        let chieucao = document.getElementById("chieu_cao").value;
+        let cannang = document.getElementById("can_nang").value;
+        let bmi = parseFloat(cannang) / parseFloat(chieucao) / parseFloat(chieucao);
+        document.getElementById("chisobmi").innerHTML=bmi.toFixed(1);
+        let xuat_kq= document.getElementById("ket_qua");
+        if (bmi<18.5) {xuat_kq.innerHTML='Gầy';
+
+        } else if (bmi<25) {
+            xuat_kq.innerHTML='Cân đối';
+        } else if (bmi<30) {
+            xuat_kq.innerHTML='Hơi béo';
+        } else {
+            xuat_kq.innerHTML='Béo';
+        }
+
+    }
+</script>
+
+</html>

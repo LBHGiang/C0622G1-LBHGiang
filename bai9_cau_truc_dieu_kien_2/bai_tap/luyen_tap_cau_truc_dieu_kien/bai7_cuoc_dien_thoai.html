@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let soPhutGoi = prompt('Nhập số phút gọi của hộ gia đình.\n'+
+        ' Phí thuê bao bắt buộc là 25 nghìn.\n' +
+        '    600 đồng cho mỗi gọi của 50 phút đầu tiên.\n' +
+        '    400 đồng cho mỗi phút gọi của 150 phút tiếp theo.\n' +
+        '    200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.');
+    let giaTien = 25000;
+    if (soPhutGoi <= 50) {
+        giaTien = giaTien + soPhutGoi * 600;
+    } else if (soPhutGoi <= 150) {
+        giaTien = giaTien + 50 * 600 + (soPhutGoi - 50) * 400;
+    } else {
+        giaTien = giaTien + 50 * 600 + 150 * 400 + (soPhutGoi - 200) * 200;
+
+    }
+    alert('Giá cước = ' + giaTien + 'VNĐ');
+
+</script>
+</html>

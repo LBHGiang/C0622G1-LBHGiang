@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        img {
+            width: 300px;
+            height: 100px
+        }
+
+        table {
+            width: 300px;
+            height: 300px
+        }
+
+        td {
+            width: 100%
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="bang">
+    <tr>
+        <td><img onclick="click1()" id="tren" src="../img-1.png"></td>
+    </tr>
+    <tr>
+        <td><img onclick="click2()" id="giua" src="../img-nobita2.png"/></td>
+    </tr>
+    <tr>
+        <td><img onclick="click3()" id="duoi" src="../img-chaien3.png"/></td>
+    </tr>
+</table>
+</body>
+<script>
+
+    let image_tren = ["../img-1.png",
+        "../img-bobita1.png",
+        "../img-chaien1.png"
+    ]
+    let image_giua = ["../img-2.png",
+        "../img-nobita2.png", "../img-chaien2.png"
+    ]
+    let image_duoi = ["../img-3.png", "../img-nobita3.png", "../img-chaien3.png"
+
+    ]
+    let number1 = 0;
+    let hang1 = document.getElementById("tren");
+
+    function click1() {
+        number1 = number1 + 1;
+        if (number1 == 3) {
+            number1 = 0;
+        }
+        hang1.src = image_tren[number1];
+        check();
+    }
+
+    let number2 = 1;
+    let hang2 = document.getElementById("giua");
+
+    function click2() {
+
+        number2 = number2 + 1;
+        if (number2 == 3) {
+            number2 = 0;
+        }
+        hang2.src = image_giua[number2];
+        check();
+    }
+
+    let number3 = 2;
+    let hang3 = document.getElementById("duoi");
+
+    function click3() {
+
+        number3 = number3 + 1;
+        if (number3 == 3) {
+            number3 = 0;
+        }
+        hang3.src = image_duoi[number3];
+        check();
+    }
+
+    function check() {
+        if (number1 == number2 && number1 == number3) {
+            document.getElementById("bang").style.border = '2px solid red';
+
+        } else {
+
+            document.getElementById("bang").style.border = '2px solid white';
+        }
+    }
+</script>
+</html>

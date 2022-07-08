@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img id="hinh_anh"
+     src="https://i1-vnexpress.vnecdn.net/2019/03/02/bai-toan-3768-1551057063-6906-1551496131.png?w=0&h=0&q=100&dpr=2&fit=crop&s=DA7OaLTw24dkn8-TO7atlQ"
+     alt="hinh_anh_qua_bong"
+     style="margin-left: 300px; width: 400px;height: 300px">
+<p>Ấn vào nút để di chuyển quả bóng sang trái và phải</p>
+<button onclick="di_chuyen1()">Move right -->!</button>
+<button onclick="di_chuyen2()"><--Move left!</button>
+</body>
+<script>
+    let khoangcach = 300;
+    // let khoangcach = parseInt(document.getElementById("hinh_anh").style.left);
+    function di_chuyen1() {
+        khoangcach = khoangcach + 50;
+        document.getElementById("hinh_anh").style.marginLeft = khoangcach + 'px';
+    }
+
+    function di_chuyen2() {
+        khoangcach = khoangcach - 50;
+        document.getElementById("hinh_anh").style.marginLeft = khoangcach + 'px';
+    }
+</script>
+</html>

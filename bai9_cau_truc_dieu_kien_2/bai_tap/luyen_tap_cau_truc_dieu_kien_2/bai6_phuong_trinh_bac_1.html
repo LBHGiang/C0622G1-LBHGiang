@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let heSoA = prompt('Nhập hệ số a');
+    let heSoB = prompt('Nhập nốt hệ số b');
+    if (heSoA == 0) {
+        if (heSoB == 0) {
+            alert('Phương trình có vô số nghiệm.');
+        } else {
+            alert('Phương trình vô nghiệm.');
+        }
+    } else {
+        let nghiemX = -heSoB / heSoA;
+        alert('Phương trình có nghiệm duy nhất x= ' + nghiemX.toFixed(1));
+    }
+</script>
+</html>

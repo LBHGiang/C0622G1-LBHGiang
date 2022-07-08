@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let doanhSo = prompt('Nhập doanh số (VNĐ)\n' +
+        'Từ 0 đến 300.000 => 3%\n' +
+        'Từ 300.000 đến 500.000 => 4%\n' +
+        'Trên 500.000 =>  6%');
+    let hoaHong = 0;
+    if (doanhSo <= 300000) {
+        hoaHong = doanhSo / 100 * 3;
+    } else if (doanhSo <= 500000) {
+        hoaHong = 300000 / 100 * 3 + (doanhSo - 300000) / 100 * 4;
+    } else {
+        hoaHong = 300000 / 100 * 3 + 200000 / 100 * 4 + (doanhSo - 500000) / 100 * 6;
+    }
+    alert('Hoa hồng = ' + hoaHong + 'VNĐ');
+</script>
+</html>
