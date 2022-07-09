@@ -30,7 +30,7 @@
                 <option value="15000">AUS $</option>
             </select>
         </td>
-        <td id="result" style="text-align: right;color: red"></td>
+        <td id="reSult" style="text-align: right;color: red"></td>
         <td>
             <select id="to">
                 <option value="1">VND</option>
@@ -51,11 +51,11 @@
 </body>
 <script>
     function convert() {
-        let Amount = document.getElementById("amount").value;
-        let DauVao = document.getElementById("from").value;
-        let DauRa = document.getElementById("to").value;
-        let KetQua = (Amount * DauVao / DauRa);
-        document.getElementById("result").innerHTML = KetQua.toFixed(3);
+        let amount = document.getElementById("amount").value;
+        let dauVao = document.getElementById("from").value;
+        let dauRa = document.getElementById("to").value;
+        let ketQua = (amount * dauVao / dauRa);
+        document.getElementById("reSult").innerHTML = ketQua.toFixed(3);
 
     }
 </script>
