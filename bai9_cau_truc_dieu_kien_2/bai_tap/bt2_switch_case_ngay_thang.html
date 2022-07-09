@@ -6,18 +6,18 @@
 </head>
 <body>
 <input type="text" id="ten_thang" placeholder="Nhập tháng (1-12)"/>
-<button onclick="xuat_thang()">Tính số ngày</button>
+<button onclick="xuatThang()">Tính số ngày</button>
 <br>
 <p id="ket_qua"></p>
 
 </body>
 <script>
-    function xuat_thang() {
+    function xuatThang() {
         let thang = document.getElementById("ten_thang").value;
-        let xuat_kq = document.getElementById("ket_qua");
+        let xuatKQ = document.getElementById("ket_qua");
         switch (thang) {
             case ('2'):
-                xuat_kq.innerHTML='Tháng 2 có 28 hoặc 29 ngày';
+                xuatKQ.innerHTML='Tháng 2 có 28 hoặc 29 ngày';
                 break;
             case ('1'):
             case ('3'):
@@ -26,15 +26,15 @@
             case ('8'):
             case ('10'):
             case ('12'):
-                xuat_kq.innerHTML='Tháng ' + thang + ' có 31 ngày';
+                xuatKQ.innerHTML='Tháng ' + thang + ' có 31 ngày';
                 break;
             case ('4'):
             case ('6'):
             case ('9'):
             case ('11'):
-                xuat_kq.innerHTML='Tháng ' + thang + ' có 30 ngày';
+                xuatKQ.innerHTML='Tháng ' + thang + ' có 30 ngày';
                 break;
-                default:xuat_kq.innerHTML='Bạn nhập sai';
+                default:xuatKQ.innerHTML='Bạn nhập sai';
         }
     }
 </script>

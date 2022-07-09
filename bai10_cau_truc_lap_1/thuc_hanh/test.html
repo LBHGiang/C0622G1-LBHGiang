@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let xuatBang = '<table border="1" width="300" cellspacing="0" cellpadding="3" >';
+    for (let i = 1; i <= 10; i++) {
+        xuatBang += '<tr>';
+        for (let j = 1; j <= 10; j++) {
+            let giaTri = i * j;
+            xuatBang += '<td>' + giaTri + '</td>';
+        }
+        xuatBang += '</tr>'
+    }
+    xuatBang += '</table>'
+    document.write(xuatBang);
+</script>
+</html>

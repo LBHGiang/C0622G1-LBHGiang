@@ -15,8 +15,8 @@
 <button onclick="di_chuyen2()"><--Move left!</button>
 </body>
 <script>
-    let khoangcach = 300;
-    // let khoangcach = parseInt(document.getElementById("hinh_anh").style.left);
+    let khoangcach = parseInt(document.getElementById("hinh_anh").style.marginLeft);
+
     function di_chuyen1() {
         khoangcach = khoangcach + 50;
         document.getElementById("hinh_anh").style.marginLeft = khoangcach + 'px';

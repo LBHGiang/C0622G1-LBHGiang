@@ -11,13 +11,13 @@
     let kiemTra = prompt('Nhập điểm bài kiểm tra:');
     let giuaKi = prompt('Nhập điểm thi giữa kì:');
     let cuoiKi = prompt('Nhập điểm thi cuối kì:');
-    let dtb = (kiemTra * 1 + giuaKi * 2 + cuoiKi * 3) / 6;
-    alert('Điểm trung bình = '+dtb.toFixed(1));
-    if (dtb < 5) {
+    let diemTB = (kiemTra * 1 + giuaKi * 2 + cuoiKi * 3) / 6;
+    alert('Điểm trung bình = '+diemTB.toFixed(1));
+    if (diemTB < 5) {
         alert('HS Yếu');
-    } else if (dtb < 6.5) {
+    } else if (diemTB < 6.5) {
         alert('HS trung bình');
-    } else if (dtb < 8) {
+    } else if (diemTB < 8) {
         alert('HS khá');
     } else {
         alert('HS giỏi!');

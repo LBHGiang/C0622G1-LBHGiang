@@ -56,7 +56,7 @@
             <button onclick="reSet()">AC</button>
         </td>
         <td>
-            <button id="so_0" value="0" onclick="press(this.value)">0</button>
+            <button id="so0" value="0" onclick="press(this.value)">0</button>
         </td>
         <td>
             <button onclick="reSult()">=</button>
@@ -72,15 +72,15 @@
 
     function press(value) {
         if (value == '/') {
-            document.getElementById("so_0").disabled = true;
+            document.getElementById("so0").disabled = true;
         } else {
-            document.getElementById("so_0").disabled = false;
+            document.getElementById("so0").disabled = false;
         }
         if (value == '+' || value == '-' || value == '*' || value == '/') {
-            tat_Chucnangg();
+            tatChucNang();
 
         } else {
-            bat_Chucnang();
+            batChucNang();
         }
         view.value += value; //view.value = view.value + value;
 
@@ -95,7 +95,7 @@
         view.value = "";
     }
 
-    function tat_Chucnangg() {
+    function tatChucNang() {
         document.getElementById("phep/").disabled = true;
         document.getElementById("phep+").disabled = true;
         document.getElementById("phep-").disabled = true;
@@ -103,7 +103,7 @@
 
     }
 
-    function bat_Chucnang() {
+    function batChucNang() {
         document.getElementById("phep/").disabled = false;
         document.getElementById("phep+").disabled = false;
         document.getElementById("phep-").disabled = false;

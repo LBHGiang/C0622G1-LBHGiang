@@ -6,5 +6,5 @@ toan = parseInt(toan);
 ly = parseInt(ly);
 hoa = parseInt(hoa);
 var tong = (toan + ly + hoa);
-var dtb = tong / 3;
-document.write('Điểm trung bình =' + dtb + '. Tổng là: ' + tong);
+var diemTrungBinh = tong / 3;
+document.write('Điểm trung bình =' + diemTrungBinh + '. Tổng là: ' + tong);

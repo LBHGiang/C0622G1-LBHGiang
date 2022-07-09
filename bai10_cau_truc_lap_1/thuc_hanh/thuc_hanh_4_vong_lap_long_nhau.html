@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table {border: solid 1px black; border-collapse: collapse}
+        td {border: solid 1px black}
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td id="td11"></td>
+        <td id="td12"></td>
+    </tr>
+    <tr>
+        <td id="td21"></td>
+        <td id="td22"></td>
+    </tr>
+</table>
+</body>
+<script>
+    let rowID=1;
+    let colID=1;
+    diaChiO='td'+rowID + colID;
+    document.getElementById(diaChiO).innerHTML = 3;
+</script>
+</html>
