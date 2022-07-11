@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let dem = 0, soNguyen = 2;
+    let soNguyenTo = '20 số nguyên tố đầu tiên là:<br>';
+    while (dem < 20) {
+        let xet = 0;
+        for (let i = 1; i <= soNguyen; i++) {
+            if (soNguyen % i == 0) {
+                xet++;
+            }
+        }
+        if (xet == 2) {
+            soNguyenTo += soNguyen + '<br>';
+            dem++;
+        }
+        soNguyen++;
+
+    }
+    document.write(soNguyenTo);
+</script>
+</html>

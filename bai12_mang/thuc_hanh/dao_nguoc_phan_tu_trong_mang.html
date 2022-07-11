@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = Array();
+    let thayDoi;
+    array.length = +prompt('Nhập số lượng phần tử của mảng');
+    //Nhập
+    for (let i = 0; i < array.length; i++) {
+        array[i] = prompt('Element' + i + '=');
+    }
+    for (let i = 0; i < (array.length / 2); i++) {
+        thayDoi = array[i];
+        array[i] = array[array.length - 1 - i];
+        array[array.length - 1 - i] = thayDoi;
+    }
+    //xuất
+    array.forEach(function (item) {
+        document.write(item + '<br>');
+
+    })
+
+</script>
+</html>

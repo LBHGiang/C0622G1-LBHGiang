@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="nhapDuLieu" type="text"/>
+<button onclick="addValue()">Add</button>
+<button onclick="displayArray()">Display</button>
+<p id="xuatDuLieu">Kết quả</p>
+<script>
+    let duLieu = Array();
+    let i = 0;
+    let xuatDuLieu = '<hr>';
+
+    function addValue() {
+
+        duLieu[i] = document.getElementById("nhapDuLieu").value;
+        i++;
+        document.getElementById("nhapDuLieu").value = '';
+    }
+
+    function displayArray() {
+        for (let j = 0; j < duLieu.length; j++) {
+
+            xuatDuLieu += 'Element ' + j + ' = ' + duLieu[j] + '<br>';
+        }
+        document.getElementById("xuatDuLieu").innerHTML = xuatDuLieu;
+    }
+</script>
+</body>
+</html>

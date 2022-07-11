@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sum = 0, count = 0, i = 1;
+    let soChiaHetCho7 = '15 số chia hết cho 7 đầu tiên là: ';
+    while (count < 15) {
+        if (i % 7 == 0) {
+            sum += i;
+            count++;
+            soChiaHetCho7 += i + ', ';
+        }
+        i++;
+    }
+    document.write(soChiaHetCho7 + 'Tổng bằng:' + sum);
+</script>
+</body>
+</html>

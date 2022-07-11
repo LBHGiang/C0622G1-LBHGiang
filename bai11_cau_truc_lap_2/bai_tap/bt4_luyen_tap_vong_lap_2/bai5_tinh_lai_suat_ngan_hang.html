@@ -5,8 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-
-</body>
 <script>
     let tienGui = prompt('Nhập số tiền bạn gửi vào đây (trĐ)\n' +
         'Lãi suất hàng tháng là 5%');
@@ -16,6 +14,7 @@
     for (let i = 0; i < n; i++) {
         tienGui = tienGui + tienGui / 100 * 5;
     }
- alert('Số tiền bạn nhận được sau '+n+' tháng là '+ tienGui.toFixed(3)+'trĐ');
+    alert('Số tiền bạn nhận được sau '+n+' tháng là '+ tienGui.toFixed(3)+'trĐ');
 </script>
+</body>
 </html>

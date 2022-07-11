@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let dai = parseInt(prompt('Nhập chiều dài Hình chữ nhật'));
+    let rong = parseInt(prompt('Nhập chiều rộng Hình chữ nhật'));
+    let hinhChuNhat = '';
+    for (let i = 1; i <= rong; i++) {
+        for (let j = 1; j <= dai; j++) {
+
+            if (i == 1 || i == rong) {
+                hinhChuNhat += '*';
+            } else if (j == 1 || j == dai) {
+                hinhChuNhat += '*';
+            } else {
+                hinhChuNhat += '&ensp;'
+            }
+
+        }
+        hinhChuNhat += '<br>';
+    }
+    document.write(hinhChuNhat);
+</script>
+</body>
+</html>

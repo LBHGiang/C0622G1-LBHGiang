@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bảng Cửu Chương</p>
+</body>
+
+<script>
+    let bangCuuChuong = '<table border="1" cellspacing="0" cellpadding="3" width="300">';
+
+    for (let i = 2; i <= 9; i++) {
+        bangCuuChuong += '<tr>'
+        for (let j = 1; j <= 9; j++) {
+            let ketQua = i * j;
+            bangCuuChuong += '<td>' + i + 'x' + j + '=' + ketQua + '</td>';
+        }
+        bangCuuChuong += '</tr>';
+    }
+    bangCuuChuong += '</table>'
+    document.write(bangCuuChuong);
+</script>
+</html>
