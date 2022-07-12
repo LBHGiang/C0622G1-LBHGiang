@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [-3, 5, 1, 3, 2, 10];
+    let max = numbers[0];
+    let maxIndex;
+    for (let i = 0; i < 6; i++) {
+        if (max < numbers[i]) {
+            max = numbers[i];
+            maxIndex = i;
+        }
+    }
+    alert('max value off array is ' + max + ', at position ' + maxIndex);
+</script>
+</body>
+</html>

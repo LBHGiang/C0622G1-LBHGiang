@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Từ điển kiếm từ 1 đến 5</h2>
+<input type="text" id="viTriTiengAnh" size="7">
+<button onclick="change()">Search</button>
+<p id="viTriTiengViet">Kết quả</p>
+<script>
+    let tiengAnh = ["one", "two", "three", "four", "fine"];
+    let tiengViet = ["một", "hai", "ba", "bốn", "năm"];
+    let viTriTiengViet = document.getElementById("viTriTiengViet");
+
+    function change() {
+        let timKiem = document.getElementById("viTriTiengAnh").value;
+        let index = tiengAnh.indexOf(timKiem);
+        if (index != -1) {
+            viTriTiengViet.innerHTML = timKiem + ': ' + tiengViet[index];
+        } else {
+            viTriTiengViet.innerHTML = timKiem + ' không được tìm thấy trong từ điển này';
+        }
+    }
+</script>
+</body>
+</html>

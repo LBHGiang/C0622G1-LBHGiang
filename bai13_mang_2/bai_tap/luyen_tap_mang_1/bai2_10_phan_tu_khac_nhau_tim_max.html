@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = Array();
+    let number, max = 0;
+    for (let i = 0; i < 10; i++) {
+        //nhập phần tử khác nhau
+        do {
+            number = +prompt('Element ' + i + '=');
+        } while (array.includes(number))
+        array[i] = number;
+    }
+    //tìm max
+    for (let value of array) {
+        if (value > max) {
+            max = value
+        }
+    }
+    document.write(array + '<br>');
+    document.write('max value of array is ' + max + ' at position' + array.indexOf(max));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inPut = prompt('Nhập vào một số!');
+    let outPut = '';
+    for (let i = 0; i < inPut.length; i++) {
+        outPut += inPut[i];
+        if (inPut[i] % 2 == 0 && inPut[i + 1] % 2 == 0) {
+            outPut += '-';
+        }
+    }
+    document.write(outPut);
+</script>
+</body>
+</html>

@@ -7,53 +7,53 @@
 <body>
 <script>
     let canh = parseInt(prompt('Nhập chiều dài cạnh của tam giác'));
-    let xuatDauSao;
+    let veTamGiac;
 
-    xuatDauSao = '';
+    veTamGiac = '';
     for (let i = 1; i <= canh; i++) {
         for (let j = 1; j <= i; j++) {
-            xuatDauSao += '*';
+            veTamGiac += '*';
         }
-        xuatDauSao += '<br>';
+        veTamGiac += '<br>';
     }
-    document.write(xuatDauSao + '<br>');
+    document.write(veTamGiac + '<br>');
 
 
-    xuatDauSao = '';
+    veTamGiac = '';
     for (let i = canh; i >= 1; i--) {
         for (let j = 1; j <= i; j++) {
-            xuatDauSao += '*';
+            veTamGiac += '*';
         }
-        xuatDauSao += '<br>';
+        veTamGiac += '<br>';
     }
-    document.write(xuatDauSao + '<br>');
+    document.write(veTamGiac + '<br>');
 
 
-    xuatDauSao = '';
+    veTamGiac = '';
     for (let i = canh; i >= 1; i--) {
         for (let j = canh; j >= 1; j--) {
             if (j - i > 0) {
-                xuatDauSao += '&ensp;';
+                veTamGiac += '&ensp;';
             } else {
-                xuatDauSao += '*';
+                veTamGiac += '*';
             }
         }
-        xuatDauSao += '<br>';
+        veTamGiac += '<br>';
     }
-    document.write(xuatDauSao + '<br>');
+    document.write(veTamGiac + '<br>');
 
-    xuatDauSao = '';
+    veTamGiac = '';
     for (let i = 1; i <= canh; i++) {
         for (let j = canh; j >= 1; j--) {
             if (j - i > 0) {
-                xuatDauSao += '&ensp;';
+                veTamGiac += '&ensp;';
             } else {
-                xuatDauSao += '*';
+                veTamGiac += '*';
             }
         }
-        xuatDauSao += '<br>';
+        veTamGiac += '<br>';
     }
-    document.write(xuatDauSao + '<br>');
+    document.write(veTamGiac + '<br>');
 
 
 </script>
