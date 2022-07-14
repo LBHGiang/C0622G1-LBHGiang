@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = ["a", "b", "c", "0", "2", "4"];
+    let kyTuSo = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    let dem = 0;
+    for (let value of array) {
+        if (kyTuSo.includes(value)) {
+            dem++;
+        }
+    }
+    document.write('Số ký tự số ở trong mảng là ' + dem);
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="viTri1"></p>
+<input id="viTriXi"type="text" placeholder="X-Hàng số" size="7">
+<input id="viTriXj"type="text" placeholder="X-Cột số" size="7">
+<button onclick="chonViTriX()">Đánh X</button><br>
+<input id="viTri0i"type="text" placeholder="0-Hàng số" size="7">
+<input id="viTri0j"type="text" placeholder="0-Cột số" size="7">
+<button onclick="chonViTri0()">Đánh 0</button>
+
+
+<script>
+    let mang = Array();
+    let chiSoXi=[];
+    let chiSoXj=[];
+    let chiSo0i=[];
+    let chiSo0j=[];
+
+    //Nhập
+    for (let i = 0; i < 10; i++) {
+        mang[i] = [];
+        for (let j = 0; j < 10; j++) {
+            mang[i][j] = ".";
+        }
+    }
+    xuatMang();//xuất
+
+    // Hàm xuất mảng.
+    function xuatMang() {
+        let duLieuXuat = '&ensp;&nbsp;0 1 2 3 4 5 6 7 8 9<br>';
+        for (let i = 0; i < 10; i++) {
+            duLieuXuat+=i+'&ensp;';
+            for (let j = 0; j < 10; j++) {
+                duLieuXuat += mang[i][j] + '&ensp;';
+            }
+            duLieuXuat += '<br>';
+        }
+        document.getElementById("viTri1").innerHTML = duLieuXuat;
+    }
+
+    //Hàm in ra X
+    function chonViTriX() {
+        let dong = document.getElementById("viTriXi").value;
+        let cot = document.getElementById("viTriXj").value;
+        mang[dong][cot] = 'x';
+        chiSoXi.push(dong);
+        chiSoXj.push(cot);
+        document.getElementById("viTriXi").value='';
+        document.getElementById("viTriXj").value='';
+        xuatMang();
+
+    }
+
+    // Hàm in ra 0
+    function chonViTri0() {
+        let dong = document.getElementById("viTri0i").value;
+        let cot = document.getElementById("viTri0j").value;
+        mang[dong][cot] = '0';
+        chiSo0i.push(dong);
+        chiSo0j.push(cot);
+        document.getElementById("viTri0i").value=''
+        document.getElementById("viTri0j").value=''
+        xuatMang();
+    }
+
+    // chiến thắng.
+    function thongBao() {
+        for (let i = 2 ; i < chiSo0i.length ; i++) {
+            for (let j = 2; j < chiSoXj.length; j++) {
+                if(chiSoXi[i]==chiSoXi[i-1]&&chiSoXi[i]==chiSoXi[i-2]){}
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let mangSoNguyen = [];
+    //Nhập phần tử
+    for (let i = 0; i < 5; i++) {
+        mangSoNguyen[i] = +prompt('Nhập giá trị phần tử thứ ' + i);//nhập giá trị
+    }
+    let max = mangSoNguyen[0];
+    let tong = 0;
+    for (let i = 0; i < mangSoNguyen.length; i++) {
+        tong += mangSoNguyen[i];
+        if (mangSoNguyen[i] > max) {
+            max = mangSoNguyen[i]
+        }
+    }
+    let trungBinhCong = tong / mangSoNguyen.length;
+
+
+    // //Tìm max
+    // let max = mangSoNguyen[0];
+    // for (let value of mangSoNguyen) {
+    //     if (value > max) {
+    //         max = value;
+    //     }
+    // }
+    // //Tính tổng => Trung bình cộng
+    // let tong = mangSoNguyen.reduce((tong, value) => tong + value);
+    // let trungBinhCong = tong / mangSoNguyen.length;
+
+    document.write('Mảng đã nhập:' + mangSoNguyen + '<br>');
+    document.write('max= ' + max + '<br>');
+    document.write('tổng là ' + tong + '<br>');
+    document.write('Trung Binh Cộng = ' + trungBinhCong);
+</script>
+</html>

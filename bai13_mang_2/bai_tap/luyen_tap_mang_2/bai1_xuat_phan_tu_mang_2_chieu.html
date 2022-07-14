@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let mangHaiChieu = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    let xuatMang = '';
+
+    for (let i = 0; i < mangHaiChieu.length; i++) {
+        xuatMang += '"row ' + i + '"<br>';
+        for (let j = 0; j < mangHaiChieu[i].length; j++) {
+            xuatMang += '"' + mangHaiChieu[i][j] + '"<br>';
+        }
+    }
+    document.write(xuatMang);
+
+    // for (let i in mangHaiChieu) {
+    //     xuatMang += '"row ' + i + '"<br>';
+    //     for (let j of mangHaiChieu[i]) {
+    //         xuatMang += '"' + j + '"<br>';
+    //     }
+    // }
+    // document.write(xuatMang);
+</script>
+</html>
