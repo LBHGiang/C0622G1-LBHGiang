@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let chuoi = prompt('Nhập chuỗi xét');
+    document.write(chuoi + '<br>');
+    document.write(check(chuoi));
+
+    function check(str) {
+        chieuDai = str.length;
+        if (str[0] !== str[chieuDai - 1]) {
+            return false;
+        } else {
+            if (chieuDai === 0 || chieuDai === 1) {
+                return true;
+            }
+            str = str.substring(1, chieuDai - 1);
+            return check(str);
+
+        }
+    }
+</script>
+</html>

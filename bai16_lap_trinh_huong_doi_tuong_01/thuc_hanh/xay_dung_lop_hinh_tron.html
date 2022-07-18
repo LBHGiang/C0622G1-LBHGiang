@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let Cicle = function (radius) {
+        this.radius = radius;
+        this.getRadius = function () {
+            return radius;
+        };
+        this.getArea = function () {
+            return radius * radius * Math.PI;
+        };
+
+    };
+    let hinhTron = new Cicle(2);
+    let r = hinhTron.radius;
+    let s = hinhTron.getArea();
+    alert("radius: " + r + "; area: " + s);
+</script>
+</html>

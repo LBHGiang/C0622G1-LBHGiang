@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let chomSao = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let tenNgoiSao = prompt('Nhập tên ngôi sao');
+    document.write(xuatTenChomSao(tenNgoiSao));
+
+    function xuatTenChomSao(name) {
+        let index = ngoiSao.indexOf(name);
+        if (index == -1) {
+            return 'Không tìm thấy chòm sao của ngôi sao này';
+        } else {
+            return ('Chòm sao: ' + chomSao[index]);
+        }
+    }
+
+</script>
+</html>

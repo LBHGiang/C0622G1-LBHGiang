@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Tạo hàm nhận vào hai tham số. a>b thì thông báo. a<=b thì xuất tổng
+
+    let soThuNhat = +prompt('Nhập số thứ 1');
+    let soThuHai = +prompt('Nhập số thứ 2');
+
+    function check(number1, number2) {
+        if (number1 > number2) {
+            alert('Số thứ 1 lớn hơn số thứ 2');
+        } else {
+            alert('Tổng của 2 số ' + number1 + ' và ' + number2 + ' là ' + (number1 + number2));
+        }
+    }
+
+    check(soThuNhat, soThuHai);
+
+</script>
+</html>

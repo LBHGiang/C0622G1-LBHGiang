@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //hàm tính diện tích, hàm tính chu vi hình tròn
+
+    function tinhDienTich(r) {
+        return 3.14 * r * r;
+    }
+
+    function tinhChuVi(r) {
+        return 2 * 3.14 * r;
+    }
+
+    let banKinh = +prompt('Nhập bán kính hình tròn');
+    alert('Diện tích = ' + tinhDienTich(banKinh));
+    alert('Chu vi = ' + tinhChuVi(banKinh));
+</script>
+</html>

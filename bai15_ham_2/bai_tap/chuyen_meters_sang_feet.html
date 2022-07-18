@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Meter</td>
+        <td></td>
+        <td>Feet</td>
+    </tr>
+    <tr>
+        <td><input id="meter" type="number" oninput="changeToFeet(this.value)"></td>
+        <td>=</td>
+        <td><input id="feet" type="number" oninput="changeToMeter(this.value)"></td>
+    </tr>
+</table>
+</body>
+<script>
+    function changeToFeet(meter) {
+        let feet = 3.279 * meter;
+        document.getElementById("feet").value = feet;
+    }
+
+    function changeToMeter(feet) {
+        let meter = 0.305 * feet;
+        document.getElementById("meter").value = meter;
+    }
+
+</script>
+</html>

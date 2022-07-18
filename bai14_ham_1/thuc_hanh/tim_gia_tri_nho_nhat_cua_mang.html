@@ -16,10 +16,10 @@
 
     let arr4 = [0, 0, 0, 0, 0, 0];
 
-    function xuatChuoiVaMax(array) {
+    function timMin(array) {
         document.write('<br>' + 'Chuỗi ' + array);
         if (array.length == 0) {
-            document.write(' là chuỗi rỗng');
+            document.write('là chuỗi rỗng');
         } else {
             let min = array[0];
             for (let arrayElement of array) {
@@ -27,13 +27,13 @@
                     min = arrayElement;
                 }
             }
-            document.write(' có min là: ' + min);
+            document.write(' có min = ' + min);
         }
     }
 
-    xuatChuoiVaMax(arr1);
-    xuatChuoiVaMax(arr2);
-    xuatChuoiVaMax(arr3);
-    xuatChuoiVaMax(arr4);
+    timMin(arr1);
+    timMin(arr2);
+    timMin(arr3);
+    timMin(arr4);
 </script>
 </html>

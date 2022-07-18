@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function check(number) {
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let display = '';
+    for (let i = 2; i < 10000; i++) {
+        if (check(i)) {
+            display += i + ' , ';
+        }
+    }
+    document.write('Tất cả số nguyên tố <10000 là: ' + display);
+
+</script>
+</html>
