@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let h = +prompt('Nhập chiều cao h của tam giác cân');
+    let display = '';
+    for (let i = 0; i < h; i++) {
+        for (let j = -h + 1; j < h; j++) {
+            if (j <= i && (-j) <= i) {
+                display += '*';
+            } else {
+                display += '&ensp;';
+            }
+        }
+        display += '<br>';
+    }
+    document.write(display);
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let h = +prompt('Nhập chiều dài cạnh h của tam giác vuông cân');
+    let display = '';
+    for (let i = 0; i < h; i++) {
+        for (let j = 0; j < h; j++) {
+            if (j === 0) {
+                display += '*';
+            } else if (i === h - 1) {
+                display += '*';
+            } else if (i === j) {
+                display += '*';
+            } else {
+                display += '&ensp;';
+            }
+        }
+        display += '<br>';
+    }
+    document.write(display);
+</script>
+</html>

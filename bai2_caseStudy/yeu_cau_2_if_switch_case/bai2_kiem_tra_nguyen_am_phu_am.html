@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nguyenAm = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+    let kyTu = prompt('Nhập một ký tự tiếng Anh bất kỳ');
+
+    //dùng For
+    // let kiemTra = false;
+    // for (let i = 0; i < nguyenAm.length; i++) {
+    //     if (nguyenAm[i] === kyTu) {
+    //         kiemTra = true;
+    //         break;
+    //     }
+    // }
+    // if (kiemTra) {
+    //     alert('Nguyên Âm');
+    // } else {
+    //     alert('Phụ âm');
+    // }
+
+    // Cách 2: Dùng indexOf
+    // let index = nguyenAm.indexOf(kyTu);
+    // if (index !== -1) {
+    //     alert('Nguyên Âm');
+    // } else {
+    //     alert('Phụ Âm');
+    // }
+
+    //Cách 3: dùng includes.
+    if (nguyenAm.includes(kyTu)){alert('Nguyên âm');}
+    else {alert('Phụ Âm');}
+</script>
+</html>

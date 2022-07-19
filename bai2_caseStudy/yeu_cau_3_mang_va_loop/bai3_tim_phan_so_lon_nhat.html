@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    let indexPhanSoLonNhat = 0;
+    for (let i = 0; i < numerators.length - 1; i++) {
+        if (numerators[i] / denominators[i] < numerators[i + 1] / denominators[i + 1]) {
+            indexPhanSoLonNhat = i + 1;
+        }
+    }
+    document.write('chỉ số của phân số lớn nhất ' + indexPhanSoLonNhat);
+</script>
+</html>

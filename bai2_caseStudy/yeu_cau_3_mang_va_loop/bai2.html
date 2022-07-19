@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+    let A = [7, 2, 5, 3, 5, 3];
+    let B = [7, 2, 5, 4, 6, 3, 5, 3, 6, 6, 4];
+    let C = [];
+
+    //Dùng for
+    // for (let i = 0; i < B.length; i++) {
+    //     let count = 0;
+    //     for (let j = 0; j < A.length; j++) {
+    //         if (B[i] === A[j]) {
+    //             count++;
+    //         }
+    //     }
+    //     for (let j = 0; j < C.length; j++) {
+    //         if (B[i] === C[j]) {
+    //             count++;
+    //         }
+    //     }
+    //     if (count === 0) {
+    //         C.push(B[i]);
+    //     }
+    // }
+    // document.write(C);
+
+    //Dùng includes
+    for (let i = 0; i < B.length; i++) {
+        if (!(A.includes(B[i]) || (C.includes(B[i])))) {
+            C.push(B[i]);
+        }
+    }
+    document.write(C);
+</script>
+</html>
