@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class BongDen {
+        constructor(status) {
+            this.status = status;
+        };
+
+        ElectricOn() {
+            this.status = 1;
+        };
+
+        ElectricOff() {
+            this.status = 0;
+        };
+
+        checkLight() {
+            if (this.status === 1) {
+                return "lighting!";
+            } else {
+                return "Not lighting!";
+            }
+        };
+    }
+
+    class CongTac {
+        constructor(bongDen, status) {
+            this.bongDen = bongDen;
+            this.status = status;
+        };
+
+        ketNoiBongDen(value) {
+            this.bongDen = value;
+        }
+
+        setStatus(value) {
+            this.status = value;
+        };
+
+        getStatus() {
+            return this.status;
+        };
+
+        turnOn() {
+            this.status = 1;
+            bongDen.ElectricOn();
+        };
+
+        turnOff() {
+            this.status = 0;
+            bongDen.ElectricOff();
+        };
+    }
+
+    let bongDen = new BongDen();
+    let congTac = new CongTac();
+    congTac.ketNoiBongDen(bongDen);
+    document.write('Kết nối bóng đèn, check: ' + bongDen.checkLight() + '<br>');
+    congTac.turnOn();
+    document.write('Bật đèn, check: ' + bongDen.checkLight() + '<br>');
+    congTac.turnOff();
+    document.write('Tắt đèn, check: ' + bongDen.checkLight() + '<br>');
+</script>
+</html>
