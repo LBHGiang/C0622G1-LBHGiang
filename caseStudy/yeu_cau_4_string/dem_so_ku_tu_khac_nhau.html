@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    checkKyTuKhacNhau();
+
+    function checkKyTuKhacNhau() {
+        let str = prompt('Nhập một chuỗi ký tự')
+        let kyTuKhacNhau = [];
+        for (let i = 0; i < str.length; i++) {
+            if (!kyTuKhacNhau.includes(str[i])) {
+                kyTuKhacNhau.push(str[i]);
+            }
+        }
+        document.write('Chuỗi đã nhập ' + str + '<br>');
+        document.write('Có ' + kyTuKhacNhau.length + ' ký tự khác nhau là: ' + kyTuKhacNhau);
+    }
+</script>
+</html>

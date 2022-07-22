@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    nhapVaTinhTongCacSoChan();
+
+    function nhapVaTinhTongCacSoChan() {
+        //Nhập mảng
+        let m = +prompt('Nhập kích thước ma trận mxn, m=');
+        let n = +prompt('n=');
+        let arr = [];
+        for (let i = 0; i < m; i++) {
+            arr[i] = [];
+            for (let j = 0; j < n; j++) {
+                arr[i][j] = +prompt('Nhập phần tử ' + i + ' , ' + j);
+            }
+        }
+        //Xuất mảng.
+        let tong = 0;
+        let xuatMang = 'Mảng đã nhập:<br>';
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+                xuatMang += arr[i][j] + ' ';
+                if (arr[i][j] % 2 === 0) {
+                    tong += arr[i][j];
+                }
+            }
+            xuatMang += '<br>';
+        }
+        document.write(xuatMang);
+        document.write('Tổng các số chẵn trong mảng= ' + tong);
+    }
+</script>
+</html>

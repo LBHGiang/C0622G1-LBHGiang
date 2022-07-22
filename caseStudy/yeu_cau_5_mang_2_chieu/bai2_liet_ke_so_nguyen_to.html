@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let mang2Chieu = [
+        [3, 5, 8],
+        [5, 15, 7],
+        [12, 4, 6]
+    ]
+    demSoNguyenTo(mang2Chieu);
+
+    function demSoNguyenTo(arr) {
+        let count = 0;
+        let danhSachSoNguyenTo = [];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                let check = true;
+                for (let k = 2; k < arr[i][j]; k++) {
+                    if (arr[i][j] % k === 0) {
+                        check = false
+                    }
+                }
+                if (check) {
+                    count++;
+                    danhSachSoNguyenTo.push(arr[i][j]);
+                }
+            }
+        }
+        document.write('Mảng đã cho có ' + danhSachSoNguyenTo.length + ' số nguyên tố: ' + danhSachSoNguyenTo);
+    }
+
+</script>
+</html>

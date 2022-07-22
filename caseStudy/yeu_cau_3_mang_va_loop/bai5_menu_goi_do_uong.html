@@ -61,7 +61,7 @@
     //Click tên đồ uống - hiển thị giá và ô chọn số lượng
     function showGia(i) {
         donGiaXuat[i] = donGia[i];
-        xuatSoLuong[i] = '<input type="number" id="viTriSoLuong1" onchange="tinhTien(this.value,' + i + ')" value="0">';
+        xuatSoLuong[i] = '<input type="number" onchange="tinhTien(this.value,' + i + ')" value="0">';
         thanhTien[i] = 0;
         display();
     }
@@ -72,7 +72,7 @@
         if (soLuong < 0) {
             thanhTien[i] = 0;
         }
-        xuatSoLuong[i] = '<input type="number" id="viTriSoLuong1" onchange="tinhTien(this.value,' + i + ')" value="' + soLuong + '">';
+        xuatSoLuong[i] = '<input type="number" onchange="tinhTien(this.value,' + i + ')" value="' + soLuong + '">';
         tinhTong();
         display();
     }

@@ -5,25 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <tr>
-        <td>Đơn giá</td>
-        <td>Số lượng</td>
-        <td>thành tiền</td>
-    </tr>
-    <tr>
-        <td>ggia[0]</td>
-        <td><input type="number" onchange="tinhTien(this.value)" value="0"></td>
-        <td><input type="text" id="tien0"></td>
-    </tr>
-</table>
 </body>
 <script>
-
-let ggia=[10000]
-    function tinhTien(sL) {
-        tien=ggia[0]*sL
-        document.getElementById("tien0").value=tien;
-    }
+let str='';
+let str2='heLLo';
+str+=str2[0].toUpperCase();
+for (let i = 1; i < str2.length; i++) {
+    str+=str2[i].toLowerCase();
+}
+document.write(str);
 </script>
 </html>

@@ -8,7 +8,49 @@
 
 </body>
 <script>
-    
+
+    main();
+
+    function main() {
+        let str = prompt('Nhập một xâu ký tự từ bàn phím');
+        document.write('Xâu nhập vào: ' + str + '<br>');
+        document.write('Xâu định dạng: ' + dinhDang(str) + '<br>');
+        document.write('Từ dài nhất: ' + timTuDaiNhat(dinhDang(str).split(/\s/)) + '<br>');
+    }
+
+    //định dạng chuỗi
+    function dinhDang(strInput) {
+        let arrInput = strInput.split(/\s+/);
+        let strOutput = '';
+        for (let i = 0; i < arrInput.length; i++) {
+            strOutput += arrInput[i][0].toUpperCase();
+            if (arrInput[i].length > 1) {
+                for (let j = 1; j < arrInput[i].length; j++) {
+                    strOutput += arrInput[i][j].toLowerCase();
+                }
+            }
+            strOutput += ' ';
+
+        }
+        return strOutput;
+    }
+
+    // Tim từ dài nhất trong chuỗi sai định dạng.
+    function timTuDaiNhat(arrInput) {
+        let maxLength = arrInput[0].length;
+        let tuDaiNhat = '';
+        for (let i = 0; i < arrInput.length; i++) {
+            if (arrInput[i].length > maxLength) {
+                maxLength = arrInput[i].length;
+            }
+        }
+        for (let i = 0; i < arrInput.length; i++) {
+            if (arrInput[i].length === maxLength) {
+                tuDaiNhat += arrInput[i] + ' ';
+            }
+        }
+        return tuDaiNhat;
+    }
 
 </script>
 </html>
