@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function solution(arr) {
+        let chuSoXuatHien=[];
+        let soLanXuatHien=[];
+        for (let i = 0; i <arr.length ; i++) {
+            if (!chuSoXuatHien.includes(arr[i])) {
+                chuSoXuatHien.push(arr[i]);
+            }
+        }
+        for (let i = 0; i < chuSoXuatHien.length ; i++) {
+            let count=0;
+            for (let j = 0; j < arr.length ; j++) {
+                if (chuSoXuatHien[i]===arr[j]) {
+                    count++;
+                }
+            }
+            soLanXuatHien.push(count);
+        }
+        for (let i = 0; i <soLanXuatHien.length ; i++) {
+            if (soLanXuatHien[0]!==soLanXuatHien[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    // solution(arr);
+</script>
+
+</html>

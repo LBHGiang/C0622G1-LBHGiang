@@ -9,63 +9,60 @@
 </body>
 <script>
     class BongDen {
-        constructor(status) {
-            this.status = status;
-        };
+        constructor() {
+            this.status = false;
+        }
 
-        ElectricOn() {
-            this.status = 1;
-        };
+        dongDienVao() {
+            this.status = true;
+        }
 
-        ElectricOff() {
-            this.status = 0;
-        };
+        dongDienKhongVao() {
+            this.status = false;
+        }
 
         checkLight() {
-            if (this.status === 1) {
-                return "lighting!";
+            if (this.status) {
+                return "den sang";
             } else {
-                return "Not lighting!";
+                return "den tat";
             }
-        };
+        }
     }
 
     class CongTac {
         constructor(bongDen, status) {
             this.bongDen = bongDen;
-            this.status = status;
-        };
-
-        ketNoiBongDen(value) {
-            this.bongDen = value;
+            this.status = false;
         }
 
-        setStatus(value) {
-            this.status = value;
-        };
+        ketNoi(tenBongDen) {
+            this.bongDen = tenBongDen;
+        }
 
-        getStatus() {
-            return this.status;
-        };
+        batCongTac() {
+            this.status = true;
+            this.bongDen.dongDienVao();
+        }
 
-        turnOn() {
-            this.status = 1;
-            bongDen.ElectricOn();
-        };
-
-        turnOff() {
-            this.status = 0;
-            bongDen.ElectricOff();
-        };
+        tatCongTac() {
+            this.status = false;
+            this.bongDen.dongDienKhongVao();
+        }
     }
 
-    let bongDen = new BongDen();
-    let congTac = new CongTac();
-    congTac.ketNoiBongDen(bongDen);
-    document.write('Kết nối bóng đèn, check: ' + bongDen.checkLight() + '<br>');
-    congTac.turnOn();
-    document.write('Bật đèn, check: ' + bongDen.checkLight() + '<br>');
-    congTac.turnOff();
-    document.write('Tắt đèn, check: ' + bongDen.checkLight() + '<br>');
+    let bongDen3 = new BongDen();
+    let congTac3 = new CongTac();
+    document.write('Kết nối! <br>');
+    congTac3.ketNoi(bongDen3);
+    document.write('Kiểm tra <br>');
+    document.write(bongDen3.checkLight() + '<br>');
+    document.write('Bật công tắc <br>');
+    congTac3.batCongTac();
+    document.write(bongDen3.checkLight() + '<br>');
+    document.write('Tắt công tắc <br>');
+    congTac3.tatCongTac()
+    document.write(bongDen3.checkLight() + '<br>');
+
 </script>
 </html>

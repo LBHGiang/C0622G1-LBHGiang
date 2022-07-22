@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="viTriBanCo"></p>
+<button onclick="choiLai()">Chơi lại</button>
+</body>
+<script>
+    //Nhap mang
+    let mang = [];
+    let thuTuChoi = 0;
+    for (let i = 0; i < 10; i++) {
+        mang[i] = [];
+        for (let j = 0; j < 10; j++) {
+            mang[i][j] = ''
+        }
+    }
+
+    //xuat ra man hinh
+    function display() {
+        let banCo = '<table border="1 solid black" style="table-layout: fixed; text-align: center" width="40%" >\n'
+        for (let i = 0; i < 10; i++) {
+            banCo += '<tr style="height: 25px">';
+            for (let j = 0; j < 10; j++) {
+                banCo += '<td onclick="choi(' + i + ',' + j + ')">' + mang[i][j] + '</td>';
+            }
+            banCo += '</tr>';
+        }
+        banCo += '</table>';
+        document.getElementById("viTriBanCo").innerHTML = banCo
+    }
+
+    display();
+
+    function choi(a, b) {
+        if (mang[a][b] === '') {
+            if (thuTuChoi % 2 === 0) {
+                mang[a][b] = 'X';
+                display();
+            } else {
+                mang[a][b] = 'O';
+                display();
+            }
+            thuTuChoi++;
+            checkWin();
+        } else {
+            alert('Đã có người chơi, đánh lại');
+        }
+    }
+
+    function checkWin() {
+        for (let i = 0; i < mang.length; i++) {
+            for (let j = 0; j < mang[i].length; j++) {
+                if ((mang[i][j] !== '') &&
+                    (mang[i][j] === mang[i][j + 1] && mang[i][j] === mang[i][j + 2] ||
+                        mang[i][j] === mang[i + 1][j] && mang[i][j] === mang[i + 2][j] ||
+                        mang[i][j] === mang[i + 1][j + 1] && mang[i][j] === mang[i + 2][j + 2] ||
+                        mang[i][j] === mang[i + 1][j - 1] && mang[i][j] === mang[i + 2][j - 2])) {
+                    alert(mang[i][j] + 'Thắng! Chơi lại!');
+                    return;
+                }
+
+            }
+
+        }
+
+    }
+
+    function choiLai() {
+        for (let i = 0; i < 10; i++) {
+            mang[i] = [];
+            for (let j = 0; j < 10; j++) {
+                mang[i][j] = ''
+            }
+        }
+        thuTuChoi = 0;
+        display();
+    }
+</script>
+</html>

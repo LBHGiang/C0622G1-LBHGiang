@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Trả về trị tuyệt đối của (đường chéo thứ 1 trong mảng 2 chiều - đường chéo thứ 2)
+    function compareTriplets(arr) {
+        let tong1 = 0;
+        let tong2 = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            tong1 += arr[i][i];
+            tong2 += arr[i][arr.length - 1 - i];
+        }
+        return Math.abs(tong1 - tong2);
+    }
+</script>
+</body>
+</html>
