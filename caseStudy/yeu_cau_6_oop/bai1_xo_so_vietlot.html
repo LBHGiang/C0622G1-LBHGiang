@@ -14,6 +14,20 @@
 <script>
     let veSo = [];
 
+    class Ticket {
+        constructor(value) {
+            this.value = value;
+        }
+
+        getValue() {
+            return this.value;
+        };
+
+        setValue(value) {
+            this.value.push(value);
+        }
+    }
+
     // Hàm xuất ra màn hình
     function display() {
         let duLieuXuat = '';
@@ -36,18 +50,18 @@
             document.getElementById("muaVe").disabled = true;
             return;
         }
-
+        let ticket = new Ticket([]);
         let luaChon;
         do {
             luaChon = prompt('Bạn muốn chọn số hay nhận vé ngẫu nhiên?' +
                 '\n Nhấn 0: Chọn số \n Nhấn 1: Nhận vé ngẫu nhiên');
         } while (luaChon != 1 && luaChon != 0 && luaChon != null);
         if (luaChon == 1) {
-            let veNgauNhien = [];
+            // let veNgauNhien = [];
             for (let i = 0; i < 6; i++) {
-                veNgauNhien.push(Math.floor(Math.random() * 100)); //tu 0-99
+                ticket.setValue(Math.floor(Math.random() * 100)); //tu 0-99
             }
-            veSo.push(veNgauNhien);
+            veSo.push(ticket.getValue());
             display();
         } else if (luaChon == 0) {
             //luaChon==0
@@ -64,29 +78,32 @@
 
     //chon So
     function choose() {
-        let veChon = [];
+        // let veChon = [];
+        let ticket = new Ticket([]);
         for (let i = 0; i < 6; i++) {
-            veChon.push((document.getElementById("chonSoThu" + i)).value);
-            if (veChon[i] < 0 || veChon[i] > 99 || isNaN(veChon[i]) || veChon[i] == '') {
+            ticket.setValue((document.getElementById("chonSoThu" + i)).value);
+            if (ticket.getValue()[i] < 0 || ticket.getValue()[i] > 99 ||
+                isNaN(ticket.getValue()[i]) || ticket.getValue()[i] == '') {
                 alert('Bạn cần nhập số từ 0 - 99');
                 document.getElementById("muaVe").disabled = true;
                 document.getElementById("xemKetQua").disabled = true;
                 return;
             }
         }
-        veSo.push(veChon);
+        veSo.push(ticket.getValue());
         display();
         document.getElementById("viTriChonSo").innerHTML = '';
         document.getElementById("muaVe").disabled = false;
         document.getElementById("xemKetQua").disabled = false;
     }
 
-    //Check kết quả
+    //Check kết quả (kết quả là 0,1,2,3,4,5. Nếu muốn kết quả random -> gộp 102 và 103 + xóa i;
     function check() {
         let ketQua = [];
         let xuatKetQua = 'Kết quả xổ số CodeGym:<br>';
         for (let i = 0; i < 6; i++) {
-            ketQua[i] = Math.floor(Math.random() * 100);
+            ketQua[i] = i;
+            // Math.floor(Math.random() * 100);
             xuatKetQua += ketQua[i] + '&ensp;&ensp;'
         }
         xuatKetQua += '<br>';
@@ -94,7 +111,7 @@
             xuatKetQua += 'Vé số ' + (i + 1) + ': ';
             let count = 0;
             for (let j = 5; j >= 0; j--) {
-                if (veSo[j] == ketQua[j]) {
+                if (veSo[i][j] == ketQua[j]) {
                     count++;
                 } else {
                     break;
