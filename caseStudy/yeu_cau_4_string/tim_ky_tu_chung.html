@@ -8,50 +8,53 @@
 
 </body>
 <script>
-let s1 = "aaacccd";
-let s2 = "abbccddd";
-checkKyTuChung(s1,s2);
-function checkKyTuChung(str1,str2) {
-    let kyTuChung=[];
-    let tanSo=[];
-    for (let i = 0; i < str1.length; i++) {
-        for (let j = 0; j < str2.length; j++) {
-            if (str1[i]===str2[j]){
-                if (!kyTuChung.includes(str1[i])){
-                    kyTuChung.push(str1[i]);
-                    break;
+    let s1 = "aaacccd";
+    let s2 = "abbccddd";
+    checkKyTuChung(s1, s2);
+
+    function checkKyTuChung(str1, str2) {
+        let kyTuChung = [];
+        let tanSo = [];
+        for (let i = 0; i < str1.length; i++) {
+            for (let j = 0; j < str2.length; j++) {
+                if (str1[i] === str2[j]) {
+                    if (!kyTuChung.includes(str1[i])) {
+                        kyTuChung.push(str1[i]);
+                        break;
+                    }
                 }
             }
         }
-    }
-    for (let i = 0; i < kyTuChung.length; i++) {
-        let count1 = 0;
-        let count2 = 0;
-        for (let j = 0; j < str1.length; j++) {
-            if(kyTuChung[i]===str1[j]){
-                count1++;
+        for (let i = 0; i < kyTuChung.length; i++) {
+            let count1 = 0;
+            let count2 = 0;
+            for (let j = 0; j < str1.length; j++) {
+                if (kyTuChung[i] === str1[j]) {
+                    count1++;
+                }
+            }
+            for (let j = 0; j < str2.length; j++) {
+                if (kyTuChung[i] === str2[j]) {
+                    count2++;
+                }
+            }
+            if (count1 > count2) {
+                tanSo.push(count2);
+            } else {
+                tanSo.push(count1);
             }
         }
-        for (let j = 0; j < str2.length; j++) {
-            if(kyTuChung[i]===str2[j]){
-                count2++;
-            }
+        let tongSoLan = 0;
+        for (let i = 0; i < tanSo.length; i++) {
+            tongSoLan += tanSo[i];
         }
-        if (count1>count2){
-            tanSo.push(count2);
-        } else {tanSo.push(count1);}
-    }
-    let tongSoLan=0;
-    for (let i = 0; i < tanSo.length; i++) {
-        tongSoLan+=tanSo[i];
-    }
-    document.write('Chuỗi 1 là :'+str1+'<br>');
-    document.write('Chuỗi 2 là :'+str2+'<br>');
-    document.write('Hai chuỗi có :'+tongSoLan+' phần tử chung:'+'<br>');
-    for (let i = 0; i < kyTuChung.length; i++) {
-        document.write(tanSo[i]+' ký tự '+kyTuChung[i]+'<br>');
-    }
+        document.write('Chuỗi 1 là :' + str1 + '<br>');
+        document.write('Chuỗi 2 là :' + str2 + '<br>');
+        document.write('Hai chuỗi có :' + tongSoLan + ' phần tử chung:' + '<br>');
+        for (let i = 0; i < kyTuChung.length; i++) {
+            document.write(tanSo[i] + ' ký tự ' + kyTuChung[i] + '<br>');
+        }
 
-}
+    }
 </script>
 </html>

@@ -15,25 +15,35 @@
         let str = prompt('Nhập một xâu ký tự từ bàn phím');
         document.write('Xâu nhập vào: ' + str + '<br>');
         document.write('Xâu định dạng: ' + dinhDang(str) + '<br>');
-        document.write('Từ dài nhất: ' + timTuDaiNhat(dinhDang(str).split(/\s/)) + '<br>');
+        document.write('Từ dài nhất: ' + timTuDaiNhat(dinhDang(str).split(' ')) + '<br>');
     }
 
     //định dạng chuỗi
+    // Cách 1
     function dinhDang(strInput) {
-        let arrInput = strInput.split(/\s+/);
+        let arrInput = strInput.split(' ');
         let strOutput = '';
         for (let i = 0; i < arrInput.length; i++) {
+            if (arrInput[i] === '') {
+                continue;
+            }
             strOutput += arrInput[i][0].toUpperCase();
-            if (arrInput[i].length > 1) {
-                for (let j = 1; j < arrInput[i].length; j++) {
-                    strOutput += arrInput[i][j].toLowerCase();
-                }
+            for (let j = 1; j < arrInput[i].length; j++) {
+                strOutput += arrInput[i][j].toLowerCase();
             }
             strOutput += ' ';
-
         }
         return strOutput;
     }
+
+    //Cách 2:
+    // function dinhDang(strInput) {
+    // let arrInput = strInput.toLowerCase().split(/\s+/);
+    // for (let i = 0; i < arrInput.length; i++) {
+    //     arrInput[i]=arrInput[i][0].toUpperCase()+arrInput[i].slice(1);
+    // }
+    // return arrInput.join(' ');
+    // }
 
     // Tim từ dài nhất trong chuỗi sai định dạng.
     function timTuDaiNhat(arrInput) {
