@@ -8,6 +8,15 @@
 
 </body>
 <script>
+
+    //Function Sắp xếp list theo thuộc tính Name
+    function sortList(array) {
+        array.sort(function (a,b) {
+            return  a.getName() > b.getName() ? 1:-1;
+        })
+    }
+
+
     //Function sắp xếp một List theo giá trị tên
     function sortList(list) {
         let name = [];
@@ -27,18 +36,26 @@
         list = newList;
         return list;
     }
-    //Function kiểm tra tham số truyền vào.
-    function checkStrings(value) {
-        if (value===''||value===null){
-            alert('Lỗi nhập, thao tác chưa được ghi nhận.');
-            return false; //Hàm cha sử dụng return này để xét.
+
+
+    //Hàm định dạng chuỗi.
+    function formatStrings(str) {
+        let array = str.split(' ');
+        let outputStrings = '';
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === '') {
+                continue;
+            }
+            outputStrings += array[i][0].toUpperCase();
+            for (let j = 1; j < array[i].length; j++) {
+                outputStrings += array[i][j].toLowerCase();
+            }
+            outputStrings += ' ';
         }
+        return outputStrings;
     }
-    function checkNumber(value) {
-        if(value===''||value===null||isNaN(value)){
-            alert('Lỗi nhập, thao tác chưa được ghi nhận.');
-            return false; //Hàm cha sử dụng return này để xét.
-        }
-    }
+
+
+
 </script>
 </html>

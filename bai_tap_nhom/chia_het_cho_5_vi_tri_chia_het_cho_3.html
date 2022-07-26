@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Đề bài: Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=50)
+    // Hiển thị ra màn hình danh sách các phần tử của mảng
+    //Hiển thị giá trị trung bình của: Phần tử chia hết cho 5 ở vị trí chia hết cho 3
+    //VD [15,2,3,5,10,15,7,8,9,10]=>(15+5+10)/3=10;
+
+    //Nhập n, check n.
+    let n;
+    do {
+        n = +prompt('Nhập số lượng phần tử của mảng, n= ');
+    } while (n < 0 || n > 50)
+    //Nhập mảng.
+    let intArray = [];
+    for (let i = 0; i < n; i++) {
+        intArray[i] = +prompt('Nhập giá trị cho phần tử thứ ' + i);
+    }
+    //In ra mảng + tính
+    let sum = 0;
+    let count = 0;
+    let average;
+    let outPut = 'Mảng đã nhập là: <br>';
+    for (let i = 0; i < n; i++) {
+        outPut += intArray[i] + ' ';
+        if (intArray[i] % 5 === 0 && i % 3 === 0) {
+            sum += intArray[i];
+            count++;
+        }
+    }
+    average = (sum / count).toFixed(1);
+    document.write(outPut + '<br>');
+    document.write('Giá trị trung bình của Phần tử chia hết cho 5 ở vị trí chia hết cho 3 là: ' + average);
+
+</script>
+</html>

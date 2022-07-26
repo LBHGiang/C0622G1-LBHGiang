@@ -8,7 +8,7 @@
 <h1>Danh sách sinh viên</h1>
 <p id="position1"></p>
 <button onclick="addNewStudent()">Thêm Sinh Viên</button>
-<button onclick="resetStudentList(studentList)">Xóa toàn bộ danh sách</button>
+<button onclick="resetStudentList()">Xóa toàn bộ danh sách</button>
 
 </body>
 <script>
@@ -104,9 +104,9 @@
     }
 
     //Function Reset
-    function resetStudentList(list) {
-        list = [];
-        display(list);
+    function resetStudentList() {
+        studentList = [];
+        display(studentList);
     }
 </script>
 </html>

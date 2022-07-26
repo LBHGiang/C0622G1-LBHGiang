@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sách sinh viên</h1>
+<p id="position1"></p>
+<button onclick="addNewStudent()">Thêm Sinh Viên</button>
+<button onclick="resetStudentList(studentList)">Xóa toàn bộ danh sách</button>
+
+</body>
+<script>
+    class Student {
+        constructor(name, phoneNumber, address) {
+            this.name = name;
+            this.phoneNumber = phoneNumber;
+            this.address = address;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setPhoneNumber(phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+
+        setAddress(address) {
+            this.address = address;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getPhoneNumber() {
+            return this.phoneNumber;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+    }
+
+    let studentList = [];
+    let student1 = new Student("Nguyễn Văn D", "090123444", "Hà Nội");
+    let student2 = new Student("Nguyễn Văn C", "090123555", "Đà Nẵng");
+    let student3 = new Student("Nguyễn Văn B", "090123666", "TP HCM");
+    studentList.push(student1);
+    studentList.push(student2);
+    studentList.push(student3);
+    display(studentList);
+
+    //Function Xuất dữ liệu ra màn hình
+    function display(list) {
+        sortList(list);
+        let displayResult = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>SĐT</th>\n' +
+            '        <th>Địa Chỉ</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            displayResult += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getName() + '</td>\n' +
+                '        <td>' + list[i].getPhoneNumber() + '</td>\n' +
+                '        <td>' + list[i].getAddress() + '</td>\n' +
+                '        <td><button onclick="editElement(' + i + ')">Edit</button></td>\n' +
+                '        <td><button onclick="deleteElement(' + i + ')">Delete</button></td>\n' +
+                '    </tr>';
+        }
+        displayResult += '</table>';
+        document.getElementById("position1").innerHTML = displayResult;
+    }
+
+    //Function Thêm sinh viên.
+    function addNewStudent() {
+
+        let name = createName();
+        if (name === false) {
+            return;
+        }
+
+        let phoneNumber = createPhoneNumber();
+        if (phoneNumber === false) {
+            return;
+        }
+
+        let address = createAddress();
+        if (address === false) {
+            return;
+        }
+
+        let newStudent = new Student();
+        newStudent.setName(formatStrings(name));
+        newStudent.setPhoneNumber(phoneNumber);
+        newStudent.setAddress(formatStrings(address));
+        studentList.push(newStudent);
+        display(studentList);
+    }
+
+    //Function Edit
+    function editElement(index) {
+        alert('Nhập vào giá trị cần sửa cho thuộc tính.\n' +
+            'Nếu thuộc tính nào không cần sửa thì chọn Hủy cho thuộc tính đó!')
+
+        let nameEdited = createName();
+        if (nameEdited !== false) {
+            studentList[index].setName(formatStrings(nameEdited));
+        }
+
+        let phoneNumberEdited = createPhoneNumber();
+        if (phoneNumberEdited !== false) {
+            studentList[index].setPhoneNumber(phoneNumberEdited);
+        }
+
+        let addressEdited = createAddress();
+        if (addressEdited !== false) {
+            studentList[index].setAddress(formatStrings(addressEdited));
+        }
+
+        display(studentList);
+    }
+
+    //Function Delete
+    function deleteElement(index) {
+        studentList.splice(index, 1);
+        display(studentList);
+    }
+
+    //Function Reset
+    function resetStudentList() {
+        studentList = [];
+        display(studentList);
+    }
+
+    // Function create a name
+    function createName() {
+        let name = prompt("Student Name: ");
+        while (name === '') {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            name = prompt("Student Name: ");
+        }
+        if (name === null) {
+            return false;
+        } else {
+            return name;
+        }
+    }
+
+    // Function create a phone number
+    function createPhoneNumber() {
+        let phoneNumber = prompt("Student Phone Number: ");
+        while (phoneNumber === '' || isNaN(phoneNumber)) {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            phoneNumber = prompt("Student Phone Number: ");
+        }
+        if (phoneNumber === null) {
+            return false;
+        } else {
+            return phoneNumber;
+        }
+    }
+
+    // Function create a address
+    function createAddress() {
+        let address = prompt("Student Address: ");
+        while (address === '') {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            address = prompt("Student Address: ");
+        }
+        if (address === null) {
+            return false;
+        } else {
+            return address;
+        }
+    }
+
+    //Định dạng chuỗi ký tự  "le van   a" ---> "Le Van A"
+    function formatStrings(str) {
+        let array = str.split(' ');
+        let outputString = '';
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === '') {
+                continue;
+            }
+            outputString += array[i][0].toUpperCase();
+            for (let j = 1; j < array[i].length; j++) {
+                outputString += array[i][j].toLowerCase();
+            }
+            outputString += ' ';
+        }
+        return outputString;
+    }
+
+    //Function Sắp xếp list theo thuộc tính Name
+    function sortList(array) {
+        array.sort(function (a,b) {
+           return  a.getName() > b.getName() ? 1:-1;
+        })
+    }
+</script>
+</html>

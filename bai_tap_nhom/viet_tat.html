@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Viết hàm. Tham số truyền vào: 1 chuỗi các kí tự.
+    //Hàm tạo cụm từ viết tắt.
+    // Chuôi có >= 2 từ --->Lấy các ký tự đầu tiên của từng từ và chuyển thành in hoa.
+    //Chuỗi có 1 từ ---> Thông báo: chuỗi có 1 từ nên ko cần viết tắt.
+    // Các từ được xác định bởi 1 hoặc nhiều dấu cách.
+    let viDu = '  nguyen   HOANG     nam';
+
+    function shortcut(string) {
+        let array = string.split(' ');
+        let count = 0;
+        let shortcutStrings = '';
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] !== '') {
+                count++;
+            }
+        }
+        if (count === 0) {
+            alert('Chuỗi không có từ nào cả.');
+            return;
+        } else {
+            if (count === 1) {
+                alert('Chuỗi có 1 từ nên không cần viết tắt.');
+                return;
+            } else {
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] === '') {
+                        continue;
+                    }
+                    shortcutStrings += array[i][0].toUpperCase();
+                }
+            }
+        }
+        alert('Từ viết tắt: ' + shortcutStrings);
+    }
+
+    shortcut(viDu);
+
+</script>
+</html>

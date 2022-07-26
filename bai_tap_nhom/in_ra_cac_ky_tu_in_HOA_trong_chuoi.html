@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Viết hàm. Tham số là một chuỗi
+    //Trả về mảng ký tự in HOA
+    //VD: "AbcDefG" ---> [A,D,G]
+
+    let viDu = "AbcDefG   qeD  aSVE";
+
+    function printUppercaseCharacters(string) {
+        let uppercaseCharacters = [];
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] !== ' ' &&
+                string[i] === string[i].toUpperCase()) {
+                uppercaseCharacters.push(string[i]);
+            }
+        }
+        return uppercaseCharacters;
+    }
+
+
+
+    alert(printUppercaseCharacters(viDu));
+</script>
+</html>

@@ -14,30 +14,30 @@
     function main() {
         let str = prompt('Nhập một xâu ký tự từ bàn phím');
         document.write('Xâu nhập vào: ' + str + '<br>');
-        document.write('Xâu định dạng: ' + dinhDang(str) + '<br>');
-        document.write('Từ dài nhất: ' + timTuDaiNhat(dinhDang(str).split(' ')) + '<br>');
+        document.write('Xâu định dạng: ' + formatStrings(str) + '<br>');
+        document.write('Từ dài nhất: ' + timTuDaiNhat(formatStrings(str).split(' ')) + '<br>');
     }
 
     //định dạng chuỗi
     // Cách 1
-    function dinhDang(strInput) {
-        let arrInput = strInput.split(' ');
-        let strOutput = '';
-        for (let i = 0; i < arrInput.length; i++) {
-            if (arrInput[i] === '') {
+    function formatStrings(str) {
+        let array = str.split(' ');
+        let outputStrings = '';
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === '') {
                 continue;
             }
-            strOutput += arrInput[i][0].toUpperCase();
-            for (let j = 1; j < arrInput[i].length; j++) {
-                strOutput += arrInput[i][j].toLowerCase();
+            outputStrings += array[i][0].toUpperCase();
+            for (let j = 1; j < array[i].length; j++) {
+                outputStrings += array[i][j].toLowerCase();
             }
-            strOutput += ' ';
+            outputStrings += ' ';
         }
-        return strOutput;
+        return outputStrings;
     }
 
     //Cách 2:
-    // function dinhDang(strInput) {
+    // function formatStrings(strInput) {
     // let arrInput = strInput.toLowerCase().split(/\s+/);
     // for (let i = 0; i < arrInput.length; i++) {
     //     arrInput[i]=arrInput[i][0].toUpperCase()+arrInput[i].slice(1);

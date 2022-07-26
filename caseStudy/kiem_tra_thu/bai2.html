@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Viết hàm có tham số truyền vào là một chuỗi các ký tự.
+    // Hàm thực hiện đếm số lượng ký tự in Hoa và cố ký tự in thường
+    // Ví dụ:   HellOCodeym => kết quả trả về : [3,8]=> 3: ký tự in hoa, 8 ký tự thường
+    // Nếu là chuỗi rỗng “” => thì trả về một mảng [0,0]
+    // Lưu ý : không tính ký tự khoảng trắng cách;
+
+    let characterString = prompt('Nhập vào một chuỗi các ký tự');
+
+    function countCharacter(string) {
+        if (string.length === 0) {
+            return [0, 0];
+        }
+
+        let result = [];
+        let countUppercaseCharacters = 0;
+        let countLowercaseCharacters = 0;
+
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] === ' ') {
+                continue;
+            }
+            if (string[i] === string[i].toUpperCase()) {
+                countUppercaseCharacters++;
+            } else {
+                countLowercaseCharacters++;
+            }
+        }
+
+        result.push(countUppercaseCharacters);
+        result.push(countLowercaseCharacters);
+        return result;
+    }
+
+    alert(countCharacter(characterString));
+</script>
+</html>
