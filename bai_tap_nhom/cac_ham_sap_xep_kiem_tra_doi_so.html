@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Function sắp xếp một List theo giá trị tên
+    function sortList(list) {
+        let name = [];
+        let newList = [];
+        for (let i = 0; i < list.length; i++) {
+            name.push(list[i].getName());
+        }
+        name.sort();
+        for (let i = 0; i < name.length; i++) {
+            for (let j = 0; j < list.length; j++) {
+                if (name[i] === list[j].getName()) {
+                    newList[i] = list[j];
+                }
+            }
+
+        }
+        list = newList;
+        return list;
+    }
+    //Function kiểm tra tham số truyền vào.
+    function checkStrings(value) {
+        if (value===''||value===null){
+            alert('Lỗi nhập, thao tác chưa được ghi nhận.');
+            return false; //Hàm cha sử dụng return này để xét.
+        }
+    }
+    function checkNumber(value) {
+        if(value===''||value===null||isNaN(value)){
+            alert('Lỗi nhập, thao tác chưa được ghi nhận.');
+            return false; //Hàm cha sử dụng return này để xét.
+        }
+    }
+</script>
+</html>
