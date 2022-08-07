@@ -13,7 +13,7 @@
     // Hàm trả về 1 mảng số fibonaci được tìm thấy trong mảng ( Yêu cầu sắp xếp tăng dần).
     //[1,5,6,13,9,12,8,0,5,1] --->	[0,1,1,5,5,8,13]
     // Chạy thử
-    // alert(findFibonaci([1,5,6,13,9,12,8,0,5,1]))
+    alert(findFibonaci([1,5,6,13,9,12,8,0,5,1]))
 
     function findFibonaci(array) {
         array.sort(function (a, b) {
@@ -28,22 +28,22 @@
         return fibonaciArray;
     }
 
+
     function checkFibonaci(value) {
-        let f0 = -1;
+        let f0 = 0;
         let f1 = 1;
-        let f2; //f2 sẽ là các phần tử của dãy fibonaci 0,1,1,2,3,5,8...
+        let f2;
         do {
-            f2 = f0 + f1;
-            if (f2 === value) {
+            if (f0 === value) {
                 return true;
             }
+            f2 = f0 + f1;
             f0 = f1;
             f1 = f2;
         }
-        while (f2 <= value)
+        while (f0 <= value)
         return false;
     }
-
 
 </script>
 </html>

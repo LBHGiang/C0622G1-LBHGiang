@@ -1,0 +1,7 @@
+ function kiemTraNamNhuan(index) {
+        if (index % 4 === 0 && index % 100 !== 0 || index % 400 === 0) {
+           return true;
+        } else {
+            return  false;
+        }
+    }

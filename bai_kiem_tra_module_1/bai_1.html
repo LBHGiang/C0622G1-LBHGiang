@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    let n;
+    let a = [];
+
+    //Kiểm tra n
+    do {
+        n = +prompt('Nhập số lượng phần tử n của mảng, n>0 và n<=50');
+    } while (n <= 0 || n > 50)
+
+    //Nhập phần tử cho mảng.
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt('Nhập giá trị phần tử thứ ' + i);
+    }
+
+    //Hiển thị mảng vừa nhập
+    document.write('Mảng đã nhập là : ' + a);
+
+    //Kiểm tra mảng dạng sóng
+    let check = true;
+    for (let i = 1; i < (a.length - 1); i++) {
+        if ((a[i] > a[i - 1] && a[i] < a[i + 1])
+            || (a[i] < a[i - 1] && a[i] > a[i + 1])
+            || (a[i] === a[i - 1]) || (a[i] === a[i + 1])) {
+            check = false;
+            break;
+        }
+    }
+
+    //Xuất kết quả check ra màn hình
+    document.write('<br>' + check);
+
+</script>
+</html>

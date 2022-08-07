@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function tongNamNhuan(year) {
+        let sum=0;
+        for (let i = 0; i <year.length ; i++) {
+            if( kiemTraNamNhuan(year[i])){
+                sum+= year[i];
+            }
+        }
+        return sum;
+    }
+    function kiemTraNamNhuan(index) {
+        if (index % 4 === 0 && index % 100 !== 0 || index % 400 === 0) {
+            return true;
+        } else {
+            return  false;
+        }
+    }
+    let array=[2100,2200,12,2,3,4];
+    alert(tongNamNhuan(array));
+</script>
+</html>

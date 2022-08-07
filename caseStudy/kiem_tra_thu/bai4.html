@@ -50,7 +50,7 @@
         }
 
         toString() {
-            alert('Máy tính ' + this.name + ' mã số ' + this.code + ' của hãng ' +
+            return ('Máy tính ' + this.name + ' mã số ' + this.code + ' của hãng ' +
                 this.manufacturer + ' có giá bán là ' + this.price);
         }
     }
@@ -63,7 +63,6 @@
     computerList.push(computer2);
     computerList.push(computer3);
     display(computerList);
-
     //function display Table
     function display(list) {
         sortList(list);

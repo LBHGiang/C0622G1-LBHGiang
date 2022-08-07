@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Quản lý xe máy</h1>
+<p id="position1"></p>
+<button onclick="themXeMoi()">Thêm xe mới</button>
+<button onclick="xoaXe()">Xóa Xe</button>
+</body>
+<script>
+    class XeMay {
+        constructor(bienSoXe, hoVaTen, chungMinhThu, hangXe, phiGuiDaDong) {
+            this.bienSoXe = bienSoXe
+            this.hoVaTen = hoVaTen;
+            this.chungMinhThu = chungMinhThu;
+            this.hangXe = hangXe;
+            this.phiGuiDaDong = phiGuiDaDong;
+        }
+
+        setBienSoXe(bienSoXe) {
+            this.bienSoXe = bienSoXe;
+        }
+
+        setHoVaTen(hoVaTen) {
+            this.hoVaTen = hoVaTen;
+        }
+
+        setChungMinhThu(chungMinhThu) {
+            this.chungMinhThu = chungMinhThu;
+        }
+
+        setHangXe(hangXe) {
+            this.hangXe = hangXe;
+        }
+
+        setPhiGuiDaDong(phiGuiDaDong) {
+            this.phiGuiDaDong = phiGuiDaDong;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+
+        getHoVaTen() {
+            return this.hoVaTen;
+        }
+
+        getChungMinhThu() {
+            return this.chungMinhThu;
+        }
+
+        getHangXe() {
+            return this.hangXe;
+        }
+
+        getPhiGuiDaDong() {
+            return this.phiGuiDaDong;
+        }
+    }
+
+    let danhSachXeMay = [];
+    let xeMay1 = new XeMay("75K59999", "Nguyen Van A", 111111111, "Honda", 50000);
+    danhSachXeMay.push(xeMay1);
+
+    display(danhSachXeMay);
+
+    //Function Xuất dữ liệu ra màn hình
+    function display(list) {
+        let displayResult = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>Biển Số Xe</th>\n' +
+            '        <th>Họ Và Tên Sinh Viên</th>\n' +
+            '        <th>CMND</th>\n' +
+            '        <th>Hãng Xe</th>\n' +
+            '        <th>Phí Gửi Xe Đã Đóng</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            displayResult += '<tr>\n' +
+                '        <td>' + list[i].getBienSoXe() + '</td>\n' +
+                '        <td>' + list[i].getHoVaTen() + '</td>\n' +
+                '        <td>' + list[i].getChungMinhThu() + '</td>\n' +
+                '        <td>' + list[i].getHangXe() + '</td>\n' +
+                '        <td>' + list[i].getPhiGuiDaDong() + '</td>\n' +
+                '    </tr>';
+        }
+        displayResult += '</table>';
+        document.getElementById("position1").innerHTML = displayResult;
+    }
+
+    //Function thêm xe mới
+    function themXeMoi() {
+        let bienSoXe = taoBienSoXe();
+        if (bienSoXe === false) {
+            return;
+        }
+
+        //Kiểm tra xe đã tồn tại chưa
+        let kiemTraTonTai = false;
+        for (let i = 0; i < danhSachXeMay.length; i++) {
+            if (danhSachXeMay[i].getBienSoXe() === bienSoXe) {
+                kiemTraTonTai = true;
+            }
+        }
+        if (kiemTraTonTai) {
+            alert('Xe này đã tồn tại trong danh sách')
+            return;
+        }
+
+
+        let hoVaTen = taoHoVaTen();
+        if (hoVaTen === false) {
+            return;
+        }
+
+        let chungMinhThu = taoCMND();
+        if (chungMinhThu === false) {
+            return;
+        }
+
+        let hangXe = themHangXe();
+        if (hangXe === false) {
+            return;
+        }
+
+        let phiGuiXe = themPhiGuiXe();
+        if (phiGuiXe === false) {
+            return;
+        }
+
+        let xeMoi = new XeMay();
+        xeMoi.setBienSoXe(bienSoXe);
+        xeMoi.setHoVaTen(hoVaTen);
+        xeMoi.setChungMinhThu(chungMinhThu);
+        xeMoi.setHangXe(hangXe);
+        xeMoi.setPhiGuiDaDong(phiGuiXe);
+        danhSachXeMay.push(xeMoi);
+        display(danhSachXeMay);
+    }
+
+    //Function xóa xe
+    function xoaXe() {
+        let bienSoXe = prompt('Nhập biển số xe muốn xóa');
+        let index = -1;
+        let xacNhan;
+        for (let i = 0; i < danhSachXeMay.length; i++) {
+            if (danhSachXeMay[i].getBienSoXe() === bienSoXe) {
+                index = i;
+            }
+        }
+        if (index === -1) {
+            alert('Xe này không tồn tại trong danh sách');
+        } else {
+            xacNhan = confirm('Bạn có chắc chắn xóa xe ' + danhSachXeMay[index].getHangXe() +
+                ' Biển kiểm soát ' + danhSachXeMay[index].getBienSoXe() + ' của HS ' +
+                danhSachXeMay[index].getHoVaTen() + ' ?');
+        }
+        if (xacNhan) {
+            danhSachXeMay.splice(index, 1);
+        }
+        display(danhSachXeMay);
+    }
+
+    // Function tạo biển số xe.
+    function taoBienSoXe() {
+        let bienSoXe = prompt("Nhập biển số xe của HS mới ");
+        while (bienSoXe === '' || bienSoXe.length > 20) {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            bienSoXe = prompt("Nhập biển số xe của HS mới ");
+        }
+        if (bienSoXe === null) {
+            return false;
+        } else {
+            return bienSoXe;
+        }
+    }
+
+    // Function thêm họ và tên
+    function taoHoVaTen() {
+        let hoVaTen = prompt("Nhập Họ Và Tên HS Mới ");
+        while (hoVaTen === '' || hoVaTen.length > 40) {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            hoVaTen = prompt("Nhập Họ Và Tên HS Mới ");
+        }
+        if (hoVaTen === null) {
+            return false;
+        } else {
+            return hoVaTen;
+        }
+    }
+
+    // Function thêm CMND
+    function taoCMND() {
+        let chungMinhThu = +prompt("Nhập CMND của HS: ");
+        while (chungMinhThu === '' || isNaN(chungMinhThu)) {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            chungMinhThu = +prompt("Nhập CMND của HS: ");
+        }
+        if (chungMinhThu === null) {
+            return false;
+        } else {
+            return chungMinhThu;
+        }
+    }
+
+    // Function thêm hãng xe
+    function themHangXe() {
+        let kiemTra = true;
+        do {
+
+            let hangXe = prompt('Chọn hãng xe:\n  ' +
+                'Honda  ---> Nhập 0 \n' +
+                'Yamaha  ---> Nhập 1 \n' +
+                'Sym  ---> Nhập 2 \n' +
+                'Piaggio  ---> Nhập 3 \n' +
+                'Suzuki  ---> Nhập 4 \n' +
+                'Ducati  ---> Nhập 5 \n' +
+                'Hãng khác  ---> Nhập 6 \n'
+            );
+            switch (hangXe) {
+                case "0" :
+                    return "Honda";
+                case "1" :
+                    return "Yamaha";
+                case "2" :
+                    return "Sym";
+                case "3" :
+                    return "Piaggio";
+                case "4" :
+                    return "Suzuki";
+                case "5" :
+                    return "Ducati";
+                case "6" :
+                    return "Hãng khác";
+                case null :
+                    return false;
+                default :
+                    kiemTra = false;
+            }
+        }
+        while (!kiemTra)
+    }
+
+
+    // Function thêm Phí gửi xe đã đóng
+    function themPhiGuiXe() {
+        let phiGuiXeDaDong = +prompt("Nhập phí gửi xe HS đã đóng: ");
+        while (phiGuiXeDaDong === '' || isNaN(phiGuiXeDaDong)) {
+            alert('Dữ liệu nhập vào không hợp lệ, nhập lại!');
+            phiGuiXeDaDong = +prompt("Nhập phí gửi xe HS đã đóng: ");
+        }
+        if (phiGuiXeDaDong === null) {
+            return false;
+        } else {
+            return phiGuiXeDaDong;
+        }
+    }
+
+</script>
+</html>

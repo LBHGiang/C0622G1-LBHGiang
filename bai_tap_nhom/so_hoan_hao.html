@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //Viết hàm in ra các số hoàn hảo. Tổng các ước = Chính nó.
+    //Ví dụ 6=1+2+3;
+    for (let i = 1; i < 10000; i++) {
+        if (checkPerfectNumber(i)){document.write(i+' ');}//6 28 496 8128
+    }
+
+
+    function checkPerfectNumber(number) {
+        let tongCacUoc = 0;
+        for (let i = 1; i < number; i++) {
+            if (number % i === 0) {
+                tongCacUoc += i;
+            }
+        }
+        if (number === tongCacUoc) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let string = prompt('Nhập chuỗi ngày tháng đúng định dạng dd/MM/yyyy ');
+    let array = [];
+
+    //Hàm kiểm tra định dạng
+    function checkFormat(str) {
+        array = str.split('/');
+        let checkFormat;
+        if (parseInt(array[0]) <= 0 || parseInt(array[0]) > 31 || isNaN(array[0])) {
+            checkFormat = false;
+        } else {
+            if (parseInt(array[1]) <= 0 || parseInt(array[1]) > 12 || isNaN(array[1])) {
+                checkFormat = false;
+            } else {
+                if (parseInt(array[2]) <= 0 || parseInt(array[2]) > 9999 || isNaN(array[2])) {
+                    checkFormat = false;
+                } else {
+                    checkFormat = true;
+                }
+            }
+        }
+        return checkFormat;
+    }
+
+    let check = checkFormat(string);
+
+    //Bắt người dùng nhập lại nếu chưa đúng định dạng
+    while (check === false) {
+        string = prompt('Yêu cầu nhập đúng định dạng dd/MM/yyyy ');
+        check = checkFormat(string)
+    }
+
+    //Hàm kiểm tra năm nhuận
+    function checkYear(yyyy) {
+        if (yyyy % 4 === 0 && yyyy % 100 !== 0 || yyyy % 400 === 0) {
+            alert(yyyy + ' là năm nhuận');
+        } else {
+            alert(yyyy + ' không là năm nhuận');
+        }
+    }
+
+    checkYear(array[2]);
+
+</script>
+</html>

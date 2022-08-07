@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    //tìm các số thân thiết từ 1 - 300
+    for (let i = 1; i < 300; i++) {
+        for (let j = 1; j < 300; j++) {
+            if (checkTwoNumber(i,j)){document.write(i+','+j+'<br>');}
+        }
+    }
+    
+    function checkTwoNumber(a, b) {
+        let tongUocA=0;
+        let tongUocB=0;
+        for (let i = 1; i < a; i++) {
+            if (a % i === 0) {
+                tongUocA += i;
+            }
+        }
+        for (let i = 1; i < b; i++) {
+            if (b % i === 0) {
+                tongUocB += i;
+            }
+        }
+        if (a === tongUocB && b === tongUocA && a!==b) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</html>
